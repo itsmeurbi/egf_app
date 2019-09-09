@@ -1,20 +1,14 @@
 .header__container {
-  @include grid-column(12);
-  @include grid-collapse;
   background-color: $concrete;
-  //@include grid-visual;
 
   .navbar {
     display: flex;
-
-    @include grid-media($mobile-neat-grid){
-    }
+    justify-content: space-between;
 
     .navbar__brand {
       display: flex;
       flex-direction: row;
       align-items: center;
-      @include grid-column(8);
 
       img {
         width: 45px;
@@ -36,8 +30,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      @include grid-column(4);
+      justify-content: space-around;
 
       .fa-bullseye {
         font-size: 22px;
@@ -48,6 +41,10 @@
           width: 45px;
           height: 45px;
         }
+      }
+
+      .line {
+        color: $alto;
       }
     }
   }
