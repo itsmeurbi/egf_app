@@ -1,0 +1,54 @@
+.header__container {
+  @include grid-column(12);
+  @include grid-collapse;
+  background-color: $concrete;
+  //@include grid-visual;
+
+  .navbar {
+    display: flex;
+
+    @include grid-media($mobile-neat-grid){
+    }
+
+    .navbar__brand {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include grid-column(8);
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .app__name {
+        font-family: $monserrat-bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+      }
+    }
+
+    .navbar__items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      @include grid-column(4);
+
+      .fa-bullseye {
+        font-size: 22px;
+      }
+
+      .profile {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Neat Breakpoints.
+@import 'neat';
+
+$mobile-neat-grid: (
+  media: 'screen and (max-width: 500px)',
+);
+
+$tablet-neat-grid: (
+  media: '(min-width: 501px) and (max-width: 768px)',
+);
+
+$laptop-neat-grid: (
+  media: '(min-width: 769px) and (max-width: 1200px)',
+);
+
+$desktop-neat-grid: (
+  media: 1200px,
+);
