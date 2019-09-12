@@ -1,0 +1,73 @@
+.goals__container.column
+  .title My goal
+  .subtitle__container
+    .subtitle
+      =image_tag 'time-icon.svg'
+      .text Time Frame
+  .timeframe
+    %p 03/09/2009 to 03/02/2020
+    = link_to('Edit', '#', class: 'reddish')
+  .linear__separator
+  .goal__container
+    .subtitle__container
+      .subtitle
+        =image_tag 'circle-icon.svg'
+        .text Path 1
+    .breadcrumb__path
+      %nav.breadcrumb
+        %ul
+          %li
+            =link_to('Building', '#')
+          %li
+            =link_to('Mobile', '#')
+          %li
+            =link_to('level 3', '#', class: 'is-active')
+      = link_to('Learn more', '#', class: 'reddish')
+    .linear__separator
+    .subtitle__container
+      .subtitle
+        =image_tag 'flag-icon.svg'
+        .text The main goal in this level
+      %p Designs major new features and demostrates a nuanced understanding of mobile platform constrains
+    .subtitle__container
+      .subtitle
+        =image_tag 'resources-icon.svg'
+        .text Useful resources
+      %ul.resources__list
+        %li
+          =link_to('link-1-resource.com', '#')
+        %li
+          =link_to('link-1-resource.com', '#')
+        %li
+          =link_to('link-1-resource.com', '#')
+        %li
+          =link_to('link-1-resource.com', '#')
+  .goal__container--tasks
+    .subtitle__container
+      .subtitle
+        =image_tag 'tasks-icon.svg'
+        .text Tasks
+    .tasks__container
+      .task
+        %i.fas.fa-check-circle
+        %p Designed iOs caching strategy for offline reading
+      .task
+        .circle--not-check
+          .circle
+        %p Built series reader on Android
+      .task
+        .circle--not-check
+          .circle
+        %p Informed the team about recent best practice changes and deprecations
+    = link_to('Add task', '#', class: 'reddish')
+    .linear__separator
+    .advisors__container
+      .subtitle__container
+      .subtitle
+        =image_tag 'advisors-icon.svg'
+        .text Recommended advisors:
+      .advisors
+        =image_tag('karen.png')
+        %b Karen Ventura
+
+  = link_to('Add new path', '#', class: 'button is-normal')
