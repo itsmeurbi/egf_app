@@ -86,12 +86,29 @@
     }
   }
 
+  .linear__separator {
+    margin: 5% 0 !important;
+  }
+
   .advisors__container {
     .advisors {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+
+      @include mobile {
+        border-radius: 10px;
+        max-width: 180px;
+        height: 35px;
+        margin: 4% 0 8%;
+      }
+
       img {
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
+        margin-right: 5%;
       }
     }
   }
