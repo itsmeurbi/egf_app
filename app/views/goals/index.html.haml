@@ -1,4 +1,4 @@
-.goals__container.column
+.main__container.column
   .title My goal
   .subtitle__container
     .subtitle
@@ -42,7 +42,7 @@
           =link_to('link-1-resource.com', '#')
         %li
           =link_to('link-1-resource.com', '#')
-  .goal__container--tasks.concrete
+  .container.concrete
     .subtitle__container
       .subtitle
         =image_tag 'tasks-icon.svg'
@@ -53,11 +53,11 @@
         %p Designed iOs caching strategy for offline reading
       .task
         .circle--not-check
-          .circle
+          .circle.circle--reddish
         %p Built series reader on Android
       .task
         .circle--not-check
-          .circle
+          .circle.circle--reddish
         %p Informed the team about recent best practice changes and deprecations
     = link_to('Add task', '#', class: 'reddish')
     .linear__separator

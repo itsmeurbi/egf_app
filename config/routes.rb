@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :goals, only: [:index, :new]
+  resources :tasks, only: [:new]
 end

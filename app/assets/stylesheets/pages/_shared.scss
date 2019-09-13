@@ -60,3 +60,25 @@
 .not__margin--bottom {
   margin-bottom: 0 !important;
 }
+
+.main__container {
+  .title {
+    margin: 10% 0 5%;
+  }
+
+  .timeframe {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+    align-items: center;
+  }
+}
+
+.white {
+  background-color: $white !important;
+  border: solid 1px $alto !important;
+}
+
+.circle--reddish {
+  border: 1px solid $reddish-pink !important;
+}

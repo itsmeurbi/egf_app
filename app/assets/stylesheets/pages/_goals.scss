@@ -15,18 +15,7 @@
   }
 }
 
-.goals__container {
-  .title {
-    margin: 10% 0 5%;
-  }
-
-  .timeframe {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-    align-items: center;
-  }
-
+.main__container {
   .goal__container {
     margin-bottom: 5%;
 
@@ -50,91 +39,4 @@
       margin: 5% 0;
     }
   }
-}
-
-.goal__container--tasks {
-  padding: 1% 4% !important;
-
-  .tasks__container {
-    margin-top: 5%;
-
-    .task {
-      display: flex;
-      width: 100%;
-      margin-bottom: 5%;
-
-      .fa-check-circle {
-        font-size: 19px;
-        width: 10%;
-      }
-
-      .circle {
-        border-radius: 50%;
-        width: 19px;
-        height: 19px;
-        background: transparent;
-        border: 1px solid $reddish-pink;
-      }
-
-      .circle--not-check {
-        width: 10%;
-      }
-
-      p {
-        width: 90%;
-      }
-    }
-  }
-
-  .linear__separator {
-    margin: 5% 0 !important;
-  }
-
-  .advisors__container {
-    .advisors {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $white;
-
-      @include mobile {
-        border-radius: 10px;
-        max-width: 180px;
-        height: 35px;
-        margin: 4% 0 8%;
-      }
-
-      img {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        margin-right: 5%;
-      }
-    }
-  }
-
-  .create__task {
-    display: flex;
-    flex-direction: column;
-
-    .textarea {
-      background-color: $concrete;
-      border-radius: 10px;
-      margin-top: 2%;
-      color: $jumbo;
-      border: none;
-    }
-
-    b {
-      margin-top: 2%;
-    }
-  }
-}
-
-.goal__container--no-tasks {
-  height: 110px;
-  padding: 1% 4% !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
 }

@@ -1,5 +1,5 @@
 = form_for :goal do |f|
-  .goals__container.column
+  .main__container.column
     .title Start goals
     .subtitle__container
       .subtitle
@@ -30,7 +30,7 @@
           = select_tag 'track_id', options_for_select(@tracks.collect{ |track| [track.name, track.id] })
         .linear__separator
 
-    .goal__container--tasks
+    .container
       .subtitle__container
         .subtitle
           =image_tag 'tasks-icon.svg'
@@ -38,12 +38,12 @@
         %p We recommend to have at least 2 to 3 tasks per cycle
       .create__task
         %b Create task
-        = text_area_tag 'task-textarea', "Describe task", class: 'textarea', size: "10x3"
-      = link_to('Add task', new_goal_path, class: 'button button--small')
+        = text_area_tag 'task-textarea', 'Describe task', class: 'textarea', size: "10x3"
+      = link_to('Add task', new_task_path, class: 'button button--small')
 
-    .goal__container--no-tasks.concrete
+    .container--no-tasks.concrete
       %b Current tasks
       %p There is no task created yet.
   .buttons__container
     = link_to('Cancel', new_goal_path, class: 'button button--reddish button--small')
-    = link_to('Done', new_goal_path, class: 'button button--alto-filled button--small')
+    = link_to('Done', new_goal_path, class: 'button button__filled--alto button--small')

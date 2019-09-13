@@ -10,9 +10,15 @@
   color: $reddish-pink;
 }
 
-.button--alto-filled {
+.button__filled--alto {
   background-color: $alto;
   color: $white;
+}
+
+.button__filled--reddish {
+  background-color: $reddish-pink;
+  color: $white;
+  border: solid 2px $reddish-pink;
 }
 
 .button--large {
@@ -25,4 +31,8 @@
 
 .buttons__container {
   display: flex;
+}
+
+.button--right {
+  margin: 10% 0;
 }
