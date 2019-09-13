@@ -3,3 +3,60 @@
   background: $alto;
   margin: 5% 4%;
 }
+
+.text--small {
+  font-size: 15px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+}
+
+.subtitle__container {
+  @include mobile {
+    margin-top: 7%;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    p {
+      margin-top: -3%;
+      justify-content: center;
+    }
+  }
+
+  .subtitle {
+    display: flex;
+    flex-direction: row;
+
+     .text {
+      font-weight: 600;
+      margin-left: 3%;
+      font-family: $open-sans;
+      font-size: 18px;
+      color: $black;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+    }
+  }
+}
+
+.reddish {
+  color: $reddish-pink;
+}
+
+.concrete {
+  background-color: $concrete;
+}
+
+.not__margin--bottom {
+  margin-bottom: 0 !important;
+}

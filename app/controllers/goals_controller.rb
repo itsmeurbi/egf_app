@@ -1,4 +1,8 @@
 class GoalsController < ApplicationController
-  def show
+  def index; end
+
+  def new
+    @categories = Category.all
+    @tracks = Track.all
   end
 end

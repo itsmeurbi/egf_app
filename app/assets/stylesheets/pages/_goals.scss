@@ -24,6 +24,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2%;
+    align-items: center;
   }
 
   .goal__container {
@@ -52,7 +53,6 @@
 }
 
 .goal__container--tasks {
-  background-color: $concrete;
   padding: 1% 4% !important;
 
   .tasks__container {
@@ -112,4 +112,29 @@
       }
     }
   }
+
+  .create__task {
+    display: flex;
+    flex-direction: column;
+
+    .textarea {
+      background-color: $concrete;
+      border-radius: 10px;
+      margin-top: 2%;
+      color: $jumbo;
+      border: none;
+    }
+
+    b {
+      margin-top: 2%;
+    }
+  }
+}
+
+.goal__container--no-tasks {
+  height: 110px;
+  padding: 1% 4% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

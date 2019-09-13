@@ -42,7 +42,7 @@
           =link_to('link-1-resource.com', '#')
         %li
           =link_to('link-1-resource.com', '#')
-  .goal__container--tasks
+  .goal__container--tasks.concrete
     .subtitle__container
       .subtitle
         =image_tag 'tasks-icon.svg'
@@ -70,4 +70,4 @@
         =image_tag('karen.png')
         %p Karen Ventura
 
-  = link_to('Add new path', '#', class: 'button is-normal')
+  = link_to('Add new path', new_goal_path, class: 'button button--large button--reddish')

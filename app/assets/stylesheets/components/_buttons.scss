@@ -1,7 +1,28 @@
 .button {
+  border: solid 2px $alto;
+  border-radius: 10px;
+  font-weight: 600;
+  color: $alto;
+}
+
+.button--reddish {
   border: solid 2px $reddish-pink;
   color: $reddish-pink;
-  border-radius: 10px;
+}
+
+.button--alto-filled {
+  background-color: $alto;
+  color: $white;
+}
+
+.button--large {
   width: 240px;
-  font-weight: 600;
+}
+
+.button--small {
+  width: 140px;
+}
+
+.buttons__container {
+  display: flex;
 }

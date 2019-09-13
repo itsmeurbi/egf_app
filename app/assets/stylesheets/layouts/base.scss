@@ -13,56 +13,17 @@ body {
   margin: auto;
 }
 
-.title {
-  font-size: 34px;
-  font-weight: 800;
+h1, h2, h3 {
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.21;
   letter-spacing: normal;
-}
-
-.subtitle__container {
-  @include mobile {
-    margin-top: 7%;
-
-    img {
-      width: 16px;
-      height: 16px;
-    }
-
-    p {
-      margin-top: -3%;
-      justify-content: center;
-    }
-  }
-
-  .subtitle {
-    display: flex;
-    flex-direction: row;
-
-     .text {
-      font-weight: 600;
-      margin-left: 3%;
-      font-family: $open-sans;
-      font-size: 18px;
-      color: $black;
-      font-style: normal;
-      font-stretch: normal;
-      letter-spacing: normal;
-    }
-  }
-}
-
-.reddish {
-  color: $reddish-pink;
 }
 
 .goals__container > div {
   padding: 0 4%;
 }
 
-.goals__container > .button {
+.button {
   margin: 10% auto;
   display: block;
 }
