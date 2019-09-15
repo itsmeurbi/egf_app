@@ -1,0 +1,51 @@
+.header__container {
+  background-color: $concrete;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+
+    .navbar__brand {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .app__name {
+        font-family: $monserrat-bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+      }
+    }
+
+    .navbar__items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+      .fa-bullseye {
+        font-size: 22px;
+      }
+
+      .profile {
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+
+      .line {
+        color: $alto;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/*
+ * Sprockets provides some directives that are placed inside of comments called require,
+ * require_tree, and require_self. DO NOT USE THEM IN YOUR SASS/SCSS FILES.
+ * They are very primitive and do not work well with Sass files.
+ * Instead, use Sass's native @import directive which sass-rails has customized to integrate
+ * with the conventions of your Rails projects.
+ */
+
+ // Order of this file is important
+@charset 'utf-8';
+
+// Vendor Libraries
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import "bulma";
+@import 'utils/base';
+@import 'vendors/base';
+@import 'base/base';
+
+// utils
+
+// Page-specific styles
+@import 'pages/base';
+@import 'layouts/base';
+
+// Theme styles
+@import 'themes/base';
+
+// State styles
+@import 'components/base';
