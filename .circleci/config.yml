@@ -2,6 +2,7 @@ version: 2
 jobs:
   build:
     working_directory: ~/egf
+    shell: /bin/bash --login
     docker:
       - image: circleci/ruby:2.6.3
         environment:
@@ -13,31 +14,37 @@ jobs:
           POSTGRES_USER: egf
           POSTGRES_DB: egf_test
           POSTGRES_PASSWORD: ""
-  steps:
-    - checkout
-    # Restore Cached Dependencies
-    - type: cache-restore
-      name: Restore bundle cache
-      key: your-app-name-{{ checksum "Gemfile.lock" }}
-    # Bundle install dependencies
-    - run: bundle install --path vendor/bundle
-    # Cache Dependencies
-    - type: cache-save
-      name: Store bundle cache
-      key: your-app-name-{{ checksum "Gemfile.lock" }}
-      paths:
-        - vendor/bundle
-    # Wait for DB
-    - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-    # Setup the environment
-    - run: cp .sample.env .env
-    # Run Rubocop checks
-    - run: bundle exec rubocop
-    # Run vulnerability checks for gems
-    - run: bundle exec bundle-audit update && bundle exec bundle-audit check
-    # Run static analysis security vulnerability scanning
-    - run: brakeman --exit-on-warn .
-    # Setup the database
-    - run: bundle exec rake db:setup
-    # Run the tests
-    - run: rails test
+    steps:
+      - checkout
+      # Restore Cached Dependencies
+      - run:
+          name: Configure Bundler
+          command: |
+            gem uninstall bundler -a -x
+            BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")
+            gem install bundler -v ${BUNDLER_VERSION}
+      - type: cache-restore
+        name: Restore bundle cache
+        key: your-app-name-{{ checksum "Gemfile.lock" }}
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      # Cache Dependencies
+      - type: cache-save
+        name: Store bundle cache
+        key: your-app-name-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      # Wait for DB
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # Setup the environment
+      - run: cp .sample.env .env
+      # Run Rubocop checks
+      - run: bundle exec rubocop
+      # Run vulnerability checks for gems
+      - run: bundle exec bundle-audit update && bundle exec bundle-audit check
+      # Run static analysis security vulnerability scanning
+      - run: bundle exec brakeman --exit-on-warn .
+      # Setup the database
+      - run: bundle exec rake db:setup
+      # Run the tests
+      - run: bin/rails test
