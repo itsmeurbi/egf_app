@@ -18,6 +18,10 @@
 }
 
 .subtitle__container {
+  b {
+    color: $black;
+  }
+
   @include mobile {
     margin-top: 7%;
 
@@ -50,7 +54,7 @@
 }
 
 .reddish {
-  color: $reddish-pink;
+  color: $reddish-pink !important;
 }
 
 .concrete {
