@@ -4,5 +4,6 @@ class GoalsController < ApplicationController
   def new
     @categories = Category.all
     @tracks = Track.all
+    @users = User.all
   end
 end
