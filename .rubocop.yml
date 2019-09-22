@@ -1,0 +1,49 @@
+AllCops:
+  Exclude:
+    - "config/**/*"
+    - "bin/**/*"
+    - "db/**/*"
+    - "Gemfile"
+    - "Rakefile"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
+  Max: 120
+
+Layout/DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
+  EnforcedStyle: trailing
+
+Style/ClassAndModuleChildren:
+  Description: 'Use nested module/class definitions instead of compact style'
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Description: >-
+    Add the frozen_string_literal comment to the top of files
+    to help transition from Ruby 2.3.0 to Ruby 3.0.
+  Enabled: false
+
+Style/StringLiterals:
+  Description: >-
+    Prefer single-quoted strings when you don't need string
+    interpolation or special symbols.
+  Enabled: false
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/EmptyMethod:
+  Description: 'Put empty method definitions on a single line.'
+  Enabled: false
+
+Layout/ExtraSpacing:
+  Description: 'Do not use unnecessary spacing.'
+  Enabled: true
