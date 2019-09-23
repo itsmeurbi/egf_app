@@ -1,13 +1,13 @@
 .header__container
   .navbar
     .navbar__brand.column
-      =image_tag 'michelada_icon.png'
+      = image_tag "michelada_icon.png"
       .app__name
         EGF
     .navbar__items.column
-      =image_tag('building-icon.svg')
-      =link_to(image_tag('circle-icon.svg'), new_goal_path)
+      = link_to(image_tag("building-icon.svg"), category_path("building"))
+      = link_to(image_tag("circle-icon.svg"), new_goal_path)
       .line
         |
       .profile
-        =link_to(image_tag('profile_icon.png'), goals_path)
+        = link_to(image_tag("profile_icon.png"), goals_path)
