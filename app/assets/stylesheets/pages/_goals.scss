@@ -1,0 +1,44 @@
+.subtitle__container {
+  .resources__list {
+    list-style-position: inside;
+    margin: -5% 2% 0;
+
+    li::before {
+      content: '•';
+      color: $jumbo;
+      margin-right: 4%;
+    }
+
+    a {
+      color: $reddish-pink !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.main__container {
+  .goal__container {
+    margin-bottom: 5%;
+
+    .breadcrumb__path {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2%;
+
+      .breadcrumb {
+        margin-bottom: 0;
+
+        li > a {
+          padding: 0 3px;
+          color: $black;
+          text-decoration: none !important;
+        }
+      }
+    }
+
+    .linear__separator {
+      margin: 5% 0;
+    }
+  }
+}

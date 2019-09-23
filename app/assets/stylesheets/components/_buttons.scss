@@ -1,0 +1,38 @@
+.button {
+  border: solid 2px $alto;
+  border-radius: 10px;
+  font-weight: 600;
+  color: $alto;
+}
+
+.button--reddish {
+  border: solid 2px $reddish-pink;
+  color: $reddish-pink;
+}
+
+.button__filled--alto {
+  background-color: $alto;
+  color: $white;
+}
+
+.button__filled--reddish {
+  background-color: $reddish-pink;
+  color: $white;
+  border: solid 2px $reddish-pink;
+}
+
+.button--large {
+  width: 240px;
+}
+
+.button--small {
+  width: 140px;
+}
+
+.buttons__container {
+  display: flex;
+}
+
+.button--right {
+  margin: 10% 0;
+}

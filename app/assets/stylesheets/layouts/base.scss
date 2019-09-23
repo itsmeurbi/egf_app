@@ -3,4 +3,39 @@
 
 body {
   margin: 0;
+  color: $black;
+  font-size: 1em;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+.body__container {
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+.main__container > div {
+  padding: 0 4%;
+}
+
+.button {
+  margin: 10% auto;
+  display: block;
+}
+
+.column {
+  padding: 0;
+}
+
+p {
+  color: $black !important;
+}
+
+a {
+  text-decoration: none !important;
 }

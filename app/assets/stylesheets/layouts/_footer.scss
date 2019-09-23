@@ -1,0 +1,22 @@
+.footer {
+  background-color: $concrete;
+  padding: 1rem 0 1rem;
+
+  .categories__container {
+    margin: auto 4%;
+    display: flex;
+    justify-content: space-between;
+
+    .category {
+      text-align: center;
+
+      p {
+        font-size: 11px;
+      }
+
+      img {
+        height: 20px;
+      }
+    }
+  }
+}

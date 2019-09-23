@@ -1,0 +1,94 @@
+.main__container.column
+  .title My goal
+  .subtitle__container
+    .subtitle
+      =image_tag 'time-icon.svg'
+      .text Time Frame
+  .timeframe
+    %p 03/09/2009 to 03/02/2020
+    = link_to('Edit', '#', class: 'reddish')
+  .linear__separator
+  %section.goal__container.accordions
+    %article.accordion.is-active
+      .accordion-header.toogle
+        .path__container
+          .subtitle__container
+            .subtitle
+              =image_tag 'circle-icon.svg'
+              .text Path 1
+          .breadcrumb__path
+            %nav.breadcrumb
+              %ul
+                %li
+                  =link_to('Building', '#')
+                %li
+                  =link_to('Mobile', '#')
+                %li
+                  =link_to('level 3', '#', class: 'is-active')
+        %button.toggle
+      .accordion-body
+        .accordion-content
+          .subtitle__container
+            .subtitle
+              =image_tag 'flag-icon.svg'
+              .text The main goal in this level
+            %p Designs major new features and demostrates a nuanced understanding of mobile platform constrains
+          .subtitle__container
+            .subtitle
+              =image_tag 'resources-icon.svg'
+              .text Useful resources
+            %ul.resources__list
+              %li
+                =link_to('link-1-resource.com', '#')
+              %li
+                =link_to('link-1-resource.com', '#')
+              %li
+                =link_to('link-1-resource.com', '#')
+              %li
+                =link_to('link-1-resource.com', '#')
+          .container.acordion--objectives
+            .subtitle__container.subtitle__container--objectives
+              .subtitle
+                =image_tag 'tasks-icon.svg'
+                .text Objectives
+            %section.accordions
+              %article.accordion.is-active.is-collapsible
+                .accordion-header.toogle
+                  %p 1 Lauch test automation framework
+                  %button.toogle
+                .accordion-body
+                  .accordion-content
+                    .subtitle__container
+                      %b Tasks
+                    .tasks__container
+                      .task
+                        %i.fas.fa-check-circle
+                        %p Designed iOs caching strategy for offline reading
+                      .task
+                        .circle--not-check
+                          .circle.circle--reddish
+                        %p Built series reader on Android
+                      .task
+                        .circle--not-check
+                          .circle.circle--reddish
+                        %p Informed the team about recent best practice changes and deprecations
+                    = link_to('Add task', '#', class: 'reddish')
+
+            .okr__container
+              = link_to('Add OKR', '#', class: 'reddish')
+              .linear__separator
+            .advisors__container
+              .subtitle__container
+                .subtitle
+                  =image_tag 'advisors-icon.svg'
+                  .text Recommended advisors:
+              .advisors
+                =image_tag('karen.png')
+                %p Karen Ventura
+
+  = link_to('Add new path', new_goal_path, class: 'button button--large button--reddish')
+
+:javascript
+  $(document).ready( function() {
+    var accordions = bulmaAccordion.attach();
+  });

@@ -1,0 +1,54 @@
+= form_for :goal do |f|
+  .main__container.column
+    .title Start Milestone
+    .subtitle__container
+      .subtitle
+        =image_tag 'time-icon.svg'
+        .text Time Frame
+      %p We recommend 6 months for each cycle.
+    .timeframe
+      .select
+        = date_field(:timeframe, :datepicker_from)
+      %p to
+      .select
+        = date_field(:timeframe, :datepicker_to)
+    .linear__separator
+
+    .goal__container.not__margin--bottom
+      .subtitle__container
+        .subtitle
+          =image_tag 'circle-icon.svg'
+          .text Path 1
+      .select__container
+        %b Select Category
+        .select
+          = select_tag 'category_id', options_for_select(@categories.collect{ |category| [category.name, category.id] })
+        = link_to('See details', '#', class: 'reddish text--small')
+      .select__container
+        %b Select Track
+        .select
+          = select_tag 'track_id', options_for_select(@tracks.collect{ |track| [track.name, track.id] })
+        .linear__separator
+      .subtitle__container
+        .subtitle
+          =image_tag 'advisors-icon.svg'
+          .text Mentors:
+      .select__container
+        %b Select your mentor
+        .select
+          = select_tag 'user_id', options_for_select(@users.collect{ |user| [user.first_name, user.id] })
+        .linear__separator
+
+  .wizard__container
+    .wizard__step
+      .wizard__step--enabled
+      %span Milestone
+    .wizard__step
+      .wizard__step--disabled
+      %span Objective
+    .wizard__step
+      .wizard__step--disabled
+      %span Task
+  .buttons__container
+    = link_to('Cancel', root_path, class: 'button button--reddish button--small')
+    = link_to('Next', new_objective_path, class: 'button button__filled--reddish button--small')

@@ -1,0 +1,38 @@
+.main__container.column
+  .title Create tasks
+  .subtitle__container
+    .subtitle
+      =image_tag 'tasks-icon.svg'
+      .text Key results
+    %p We recommend to have at least 2 to 3 tasks per cycle
+  .container
+    .create__task
+      %b Create task
+      = text_area_tag 'task-textarea', 'Example: Launch test automation framework', class: 'textarea white', size: "10x2"
+    = link_to('Add task', new_task_path, class: 'button button--small button--reddish button--right')
+
+  .container
+    %b Current tasks
+    .tasks__container
+      .task
+        .circle--not-check
+          .circle
+        %p Built series reader on Android
+      .task
+        .circle--not-check
+          .circle
+        %p Informed the team about recent best practice changes and deprecations
+
+  .wizard__container
+    .wizard__step
+      .wizard__step--disabled
+      %span Milestone
+    .wizard__step
+      .wizard__step--disabled
+      %span Objective
+    .wizard__step
+      .wizard__step--enabled
+      %span Task
+  .buttons__container
+    = link_to('Cancel', root_path, class: 'button button--reddish button--small')
+    = link_to('Done', new_goal_path, class: 'button button__filled--reddish button--small')
