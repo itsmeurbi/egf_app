@@ -1,0 +1,90 @@
+.main__container.column
+  .title
+    = @category.name.titleize
+  .tabs__container
+    .tabs.is-centered.is-toggle.is-small
+      %ul
+        - @category.tracks.each_with_index do |track, index|
+          %li.tabs__element{ class: ("is-active" if index.eql?(0)) }
+            %a.tabs__element__link
+              = track.name.titleize
+
+    %div
+      - @category.tracks.each do |track|
+        %section.tab__content
+          .subtitle__text.subtitle__text--medium
+            = track.name.titleize
+          .text
+            = track.description
+
+          .linear__separator
+
+          .subtitle
+            .subtitle__text.subtitle__text--medium
+              Levels
+
+          .step_tabs__container
+            .step_tabs
+              - track.milestones.each_with_index do |milestone, index|
+                .step_tabs__item.step_tabs__item--completed
+                  .step_tabs__marker{ class: ("step_tabs__marker--active" if index.eql?(0)) }
+                    = milestone.level
+
+            %div
+              - track.milestones.each do |milestone|
+                %section.step_tab__content
+                  .subtitle
+                    .subtitle__image
+                      = image_tag 'flag-icon.svg'
+                    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                      = "Main goal"
+                  .text
+                    = milestone.description
+
+                  .subtitle
+                    .subtitle__image
+                      = image_tag 'behaviors-icon.svg'
+                    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                      = "Example behaviors:"
+                  %ul
+                    %li
+                      = "Delivers features requiring simple local modifications."
+                    %li
+                      = "Adds simple actions that call server endpoints."
+                    %li
+                      = "Reuses existing components appropriately."
+
+                  .subtitle
+                    .subtitle__image
+                      = image_tag 'behaviors-icon.svg'
+                    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                      = "Example tasks:"
+                  %ul
+                    %li
+                      = "Added existing button to a different iOS surface."
+                    %li
+                      = "Add follow button for publications on Android."
+                    %li
+                      = "Fetched and displayed a new stream, using existing stream item styles."
+
+                  .subtitle
+                    .subtitle__image
+                      = image_tag 'resources-icon.svg'
+                    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                      = "Useful resources"
+                  %ul
+                    %li
+                      = "link-1-resource.com"
+                    %li
+                      = "link-2ruby-resource.com"
+                    %li
+                      = "link-3—nice-resource.com"
+                    %li
+                      = "link-4-not-bad-resource.com"
+
+
+:javascript
+  $(document).ready( function() {
+    new Egf.BulmaTabs().init();
+    new Egf.BulmaStepTabs().init();
+  });

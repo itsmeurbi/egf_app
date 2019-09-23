@@ -1,0 +1,80 @@
+.step_tabs {
+  font-size: $size-normal;
+  min-height: $size-normal * 2;
+
+  @include block;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.step_tabs__item {
+  margin-top: 0;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+
+  &:not(:first-child) {
+    flex-basis: 1em;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    &::before {
+      bottom: 0;
+      content: " ";
+      display: block;
+      height: 0.1em;
+      left: -50%;
+      position: absolute;
+      top: #{$size-normal};
+      width: 100%;
+    }
+  }
+
+  &::before {
+    background: linear-gradient(to left, $reddish-pink 50%, $reddish-pink 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+}
+
+
+.step_tabs__marker {
+  align-items: center;
+  background: $white;
+  border: 0.1em solid $reddish-pink;
+  border-radius: 50%;
+  color: $reddish-pink;
+  display: flex;
+  font-weight: $weight-bold;
+  height: $size-normal * 2;
+  justify-content: center;
+  left: calc(50% - #{$size-normal});
+  position: absolute;
+  width: $size-normal * 2;
+  z-index: 1;
+}
+
+.step_tabs__marker--active {
+  color: $white;
+  background-color: $reddish-pink;
+}
+
+.step_tabs__item--completed {
+  &::after {
+    display: block;
+    left: 58%;
+    position: relative;
+    z-index: 1;
+    top: -10%;
+    content: image-url('checked-icon.svg');
+  }
+}
+
+.step_tab__content {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
