@@ -1,6 +1,4 @@
 .container {
-  padding: 1% 4% !important;
-
   .tasks__container {
     margin-top: 5%;
 
@@ -12,6 +10,7 @@
       .fa-check-circle {
         font-size: 19px;
         width: 10%;
+        color: $black;
       }
 
       .circle {
@@ -45,7 +44,7 @@
 
       @include mobile {
         border-radius: 10px;
-        max-width: 180px;
+        max-width: 160px;
         height: 35px;
         margin: 4% 0 8%;
       }

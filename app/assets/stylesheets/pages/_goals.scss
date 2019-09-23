@@ -10,7 +10,8 @@
     }
 
     a {
-      color: $reddish-pink;
+      color: $reddish-pink !important;
+      text-decoration: none !important;
     }
   }
 }
@@ -31,6 +32,7 @@
         li > a {
           padding: 0 3px;
           color: $black;
+          text-decoration: none !important;
         }
       }
     }

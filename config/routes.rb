@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :goals, only: [:index, :new]
   resources :tasks, only: [:new]
+  resources :objectives, only: [:new]
 end
