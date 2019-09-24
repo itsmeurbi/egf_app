@@ -10,8 +10,8 @@
     }
 
     a {
-      color: $reddish-pink !important;
-      text-decoration: none !important;
+      color: $reddish-pink;
+      text-decoration: none;
     }
   }
 }
@@ -32,7 +32,7 @@
         li > a {
           padding: 0 3px;
           color: $black;
-          text-decoration: none !important;
+          text-decoration: none;
         }
       }
     }

@@ -1,13 +1,17 @@
 select {
   width: 342px;
   height: 40px;
-  border-radius: 10px !important;
-  border: solid 1px $alto !important;
-  color: $alto !important;
+  border-radius: 10px;
+  border: solid 1px $alto;
+  color: $alto;
 }
 
 .select:not(.is-multiple):not(.is-loading)::after{
-  border-color: $alto !important;
+  border-color: $alto;
+}
+
+.input, .textarea, .select select {
+  border-radius: 10px;
 }
 
 .select__container {
@@ -26,13 +30,10 @@ input[type="date"]
   font-size: 16px;
   font-family: $open-sans;
   font-weight: 300;
+  background-color: $white;
 
   @include mobile {
     width: 135px;
     height: 40px;
   }
-}
-
-#track_id {
-  background-color: $concrete;
 }

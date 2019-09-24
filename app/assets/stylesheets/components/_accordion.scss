@@ -1,47 +1,87 @@
 .accordion-header, .accordion-body {
-  background-color: $white !important;
-  border: none !important;
-  border-radius: none !important;
+  background-color: $white;
+  border: none;
+  border-radius: none;
+}
+
+.accordions .accordion .accordion-header+.accordion-body .accordion-content {
+  padding: 0;
+}
+
+.accordions .accordion .accordion-header + .accordion-body {
+  border: none;
 }
 
 .accordion-content {
-  padding: 0 !important;
-
   .subtitle__container {
-    padding: 0 4% !important;
+    padding: 0 4%;
   }
 }
 
 .accordion-header {
-  padding: 1em 1.25em 0 !important;
+  padding: 1em 1.25em 0;
 
   .breadcrumb__path {
     .breadcrumb {
       li > a {
-        color: $black !important;
+        color: $black;
       }
     }
   }
 }
 
-.accordion {
-  button {
+.accordions .accordion .accordion-header {
+  background-color: $white;
+}
+
+.accordions .accordion {
+  .accordion-header .toggle {
     // override accordion component properties
-    height: 23px !important;
-    width: 23px !important;
-    max-height: 23px !important;
-    max-width: 23px !important;
-    min-height: 23px !important;
-    min-width: 23px !important;
-    background-color: transparent !important;
+    height: 23px;
+    width: 23px;
+    max-height: 23px;
+    max-width: 23px;
+    min-height: 23px;
+    min-width: 23px;
+    background-color: transparent;
     border-radius: none;
     background-image: url('more-icon.svg');
     background-repeat: no-repeat;
     border: none;
   }
 
-  button::before {
-    content: none !important;
+  &.is-active {
+    .accordion-header .toggle {
+      background-image: url('less-icon.svg');
+    }
+
+    .breadcrumb__path {
+      .breadcrumb {
+        li > a {
+          color: $reddish-pink;
+        }
+      }
+    }
+  }
+}
+
+.accordion--objective {
+  button {
+    height: 23px;
+    width: 23px;
+    max-height: 23px;
+    max-width: 23px;
+    min-height: 23px;
+    min-width: 23px;
+    background-color: transparent;
+    border-radius: none;
+    background-image: url('more-icon.svg');
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+  .accordion-body {
+    display: none;
   }
 
   &.is-active {
@@ -49,41 +89,45 @@
       background-image: url('less-icon.svg');
     }
 
-    .breadcrumb__path {
-      .breadcrumb {
-        li > a {
-          color: $reddish-pink !important;
-        }
-      }
+    .accordion-body, .accordion-header {
+      background-color: $gallery;
+    }
+
+    .accordion-body {
+      display: block;
     }
   }
+}
+
+.accordions .accordion.is-active .accordion-header .toggle::before {
+  content: none;
+}
+
+.accordions .accordion .accordion-header .toggle::before {
+  content: none;
 }
 
 .container.acordion--objectives {
   background-color: $concrete;
 
+  .tasks__container .task .circle {
+    border: 1px solid $reddish-pink;
+  }
+
   .subtitle__container--objectives {
     background-color: $concrete;
-    padding: 10px 4% !important;
+    padding: 10px 4%;
   }
 
   .accordion-header {
-    padding: 0 !important;
+    padding: 0;
     display: flex;
     align-items: flex-end;
-    padding: 6px 4% !important;
+    padding: 6px 4%;
+    background-color: $concrete;
 
     .subtitle__container {
       width: 80%;
-    }
-  }
-
-  .accordion {
-    &.is-active {
-      .accordion-body, .accordion-header {
-        background-color: $gallery !important;
-      }
-
     }
   }
 
@@ -99,4 +143,8 @@
   .advisors__container {
     padding: 10px 4%;
   }
+}
+
+.accordions .accordion a:not(.button):not(.tag) {
+  color: $reddish-pink;
 }

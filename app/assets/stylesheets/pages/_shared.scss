@@ -39,6 +39,7 @@
   .subtitle {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
      .text {
       font-weight: 600;
@@ -54,7 +55,21 @@
 }
 
 .reddish {
-  color: $reddish-pink !important;
+  color: $reddish-pink;
+}
+
+.text--white {
+  color: $white;
+}
+
+.background--reddish {
+  background-color: $reddish-pink;
+  color: $white;
+}
+
+.border--reddish {
+  border-radius: 4px;
+  border: solid 1px $reddish-pink;
 }
 
 .concrete {
@@ -62,7 +77,7 @@
 }
 
 .not__margin--bottom {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .main__container {
@@ -79,10 +94,10 @@
 }
 
 .white {
-  background-color: $white !important;
-  border: solid 1px $alto !important;
+  background-color: $white;
+  border: solid 1px $alto;
 }
 
 .circle--reddish {
-  border: 1px solid $reddish-pink !important;
+  border: 1px solid $reddish-pink;
 }

@@ -9,8 +9,8 @@
     = link_to('Edit', '#', class: 'reddish')
   .linear__separator
   %section.goal__container.accordions
-    %article.accordion.is-active
-      .accordion-header.toogle
+    %article.accordion
+      .accordion-header
         .path__container
           .subtitle__container
             .subtitle
@@ -38,13 +38,13 @@
               =image_tag 'resources-icon.svg'
               .text Useful resources
             %ul.resources__list
-              %li
+              %li.reddish
                 =link_to('link-1-resource.com', '#')
-              %li
+              %li.reddish
                 =link_to('link-1-resource.com', '#')
-              %li
+              %li.reddish
                 =link_to('link-1-resource.com', '#')
-              %li
+              %li.reddish
                 =link_to('link-1-resource.com', '#')
           .container.acordion--objectives
             .subtitle__container.subtitle__container--objectives
@@ -52,8 +52,8 @@
                 =image_tag 'tasks-icon.svg'
                 .text Objectives
             %section.accordions
-              %article.accordion.is-active.is-collapsible
-                .accordion-header.toogle
+              %article.accordion--objective
+                .accordion-header
                   %p 1 Lauch test automation framework
                   %button.toogle
                 .accordion-body
@@ -90,5 +90,6 @@
 
 :javascript
   $(document).ready( function() {
-    var accordions = bulmaAccordion.attach();
+    var accordions = Egf.bulmaAccordion.attach();
+    new Egf.NestedAccordion().nestedAccordion();
   });

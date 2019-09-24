@@ -10,6 +10,7 @@ body {
 }
 
 .body__container {
+  position: relative;
   margin: auto;
 }
 
@@ -33,9 +34,9 @@ h1, h2, h3 {
 }
 
 p {
-  color: $black !important;
+  color: $black;
 }
 
-a {
-  text-decoration: none !important;
+.accordions .accordion a:not(.button):not(.tag) {
+  text-decoration: none;
 }
