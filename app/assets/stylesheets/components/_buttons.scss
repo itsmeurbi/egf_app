@@ -5,6 +5,19 @@
   color: $alto;
 }
 
+.button {
+  margin: 3% auto;
+  display: block;
+  border: solid 2px $alto;
+  border-radius: 10px;
+  font-weight: 600;
+  color: $alto;
+
+  @include mobile {
+    margin: 10% auto;
+  }
+}
+
 .button__color--reddish {
   color: $reddish-pink;
 }
