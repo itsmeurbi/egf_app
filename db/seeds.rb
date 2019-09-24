@@ -1,32 +1,33 @@
 # Users
-user = User.create(first_name: 'Karen', last_name: 'Ventura', email: 'karen@michelada.io')
+karen = User.create(first_name: 'Karen', last_name: 'Ventura', email: 'karen@michelada.io')
+chuy = User.create(first_name: 'Jesus', last_name: 'Figueroa', email: 'jesus@michelada.io')
 
 # Categories
-building = Category.create(name: 'Building', description: 'description')
-executing = Category.create(name: 'Executing', description: 'description')
-supporting = Category.create(name: 'Supporting', description: 'description')
-strengthening = Category.create(name: 'Strengthening', description: 'description')
+building = Category.create(name: 'building', description: 'description')
+executing = Category.create(name: 'executing', description: 'description')
+supporting = Category.create(name: 'supporting', description: 'description')
+strengthening = Category.create(name: 'strengthening', description: 'description')
 
 # Tracks
-mobile = Track.create(name: 'Mobile', category: building, description: 'Develops expertise in native mobile platform engineering, such as iOS or Android')
-web_client = Track.create(name: 'Web Client', category: building, description: 'Develops expertise in web client technologies, such as HTML, CSS, and JavaScript')
-foundations = Track.create(name: 'Foundations', category: building, description: 'Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning')
-servers = Track.create(name: 'Servers', category: building, description: 'Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala')
+mobile = Track.create(name: 'mobile', category: building, description: 'Develops expertise in native mobile platform engineering, such as iOS or Android')
+web_client = Track.create(name: 'web client', category: building, description: 'Develops expertise in web client technologies, such as HTML, CSS, and JavaScript')
+foundations = Track.create(name: 'foundations', category: building, description: 'Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning')
+servers = Track.create(name: 'servers', category: building, description: 'Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala')
 
-project_managment = Track.create(name: 'Project Management', category: executing, description: 'Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously')
-communication = Track.create(name: 'Comunnication', category: executing, description: 'Shares the right amount of information with the right people, at the right time, and listens effectively')
-craft = Track.create(name: 'Craft', category: executing, description: 'Embodies and promotes practices to ensure excellent quality products and services')
-initiative = Track.create(name: 'Initiative', category: executing, description: 'Challenges the status quo and effects positive organizational change outside of mandated work')
+project_managment = Track.create(name: 'project management', category: executing, description: 'Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously')
+communication = Track.create(name: 'comunnication', category: executing, description: 'Shares the right amount of information with the right people, at the right time, and listens effectively')
+craft = Track.create(name: 'craft', category: executing, description: 'Embodies and promotes practices to ensure excellent quality products and services')
+initiative = Track.create(name: 'initiative', category: executing, description: 'Challenges the status quo and effects positive organizational change outside of mandated work')
 
-career_development = Track.create(name: 'Career development', category: supporting, description: 'Provides strategic support to engineers to help them build the career they want')
-org_design = Track.create(name: 'Org design', category: supporting, description: 'Defines processes and structures that enables the strong growth and execution of a diverse eng organization')
-wellbeing = Track.create(name: 'Wellbeing', category: supporting, description: 'Supports the emotional well-being of group members in difficult times, and celebrates their successes')
-accomplishment =Track.create(name: 'Accomplishment', category: supporting, description: 'Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion')
+career_development = Track.create(name: 'career development', category: supporting, description: 'Provides strategic support to engineers to help them build the career they want')
+org_design = Track.create(name: 'org design', category: supporting, description: 'Defines processes and structures that enables the strong growth and execution of a diverse eng organization')
+wellbeing = Track.create(name: 'wellbeing', category: supporting, description: 'Supports the emotional well-being of group members in difficult times, and celebrates their successes')
+accomplishment =Track.create(name: 'accomplishment', category: supporting, description: 'Inspires day to day excellence, maximises potential and effectively resolves performance issues with compassion')
 
-mentorship = Track.create(name: 'Mentorship', category: strengthening, description: 'Provides support to colleagues, spreads knowledge, and develops the team outside formal reporting structures')
-evangelism = Track.create(name: 'Evangelism', category: strengthening, description: 'Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work')
-recruiting = Track.create(name: 'Recruiting', category: strengthening, description: "Strengthens Medium's team by bringing in excellent staff members")
-community = Track.create(name: 'Community', category: strengthening, description: 'Builds community internally, gives of themself to the team, and champions and extols company values')
+mentorship = Track.create(name: 'mentorship', category: strengthening, description: 'Provides support to colleagues, spreads knowledge, and develops the team outside formal reporting structures')
+evangelism = Track.create(name: 'evangelism', category: strengthening, description: 'Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work')
+recruiting = Track.create(name: 'recruiting', category: strengthening, description: "Strengthens Medium's team by bringing in excellent staff members")
+community = Track.create(name: 'community', category: strengthening, description: 'Builds community internally, gives of themself to the team, and champions and extols company values')
 
 # Milestones
 
@@ -132,6 +133,10 @@ task_2 = Task.create(name: 'Add follow button for publications on Android', trac
 task_3 = Task.create(name: 'Fetched and displayed a new stream, using existing stream item styles', track: mobile, milestone: milestone)
 
 # Tasks user association\
-TasksUser.create(user: user, task: task_1)
-TasksUser.create(user: user, task: task_2)
-TasksUser.create(user: user, task: task_2)
+TasksUser.create(user: karen, task: task_1)
+TasksUser.create(user: karen, task: task_2)
+TasksUser.create(user: karen, task: task_3)
+
+TasksUser.create(user: chuy, task: task_1)
+TasksUser.create(user: chuy, task: task_2)
+TasksUser.create(user: chuy, task: task_3)
