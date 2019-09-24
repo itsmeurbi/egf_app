@@ -23,16 +23,16 @@
             .subtitle__text.subtitle__text--medium
               Levels
 
-          .step_tabs__container
-            .step_tabs
+          .steps__container
+            .steps
               - track.milestones.each_with_index do |milestone, index|
-                .step_tabs__item.step_tabs__item--completed
-                  .step_tabs__marker{ class: ("step_tabs__marker--active" if index.eql?(0)) }
+                .steps__item.steps__item--completed
+                  .steps__marker{ class: ("steps__marker--active" if index.eql?(0)) }
                     = milestone.level
 
             %div
               - track.milestones.each do |milestone|
-                %section.step_tab__content
+                %section.step__content
                   .subtitle
                     .subtitle__image
                       = image_tag 'flag-icon.svg'
@@ -46,45 +46,51 @@
                       = image_tag 'behaviors-icon.svg'
                     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
                       = "Example behaviors:"
-                  %ul
-                    %li
-                      = "Delivers features requiring simple local modifications."
-                    %li
-                      = "Adds simple actions that call server endpoints."
-                    %li
-                      = "Reuses existing components appropriately."
+                  %ul.resources__list
+                    %li.resources__element= "Delivers features requiring simple local modifications."
+                    %li.resources__element= "Adds simple actions that call server endpoints."
+                    %li.resources__element= "Reuses existing components appropriately."
 
                   .subtitle
                     .subtitle__image
                       = image_tag 'behaviors-icon.svg'
                     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
                       = "Example tasks:"
-                  %ul
-                    %li
-                      = "Added existing button to a different iOS surface."
-                    %li
-                      = "Add follow button for publications on Android."
-                    %li
-                      = "Fetched and displayed a new stream, using existing stream item styles."
+                  %ul.resources__list
+                    %li.resources__element= "Added existing button to a different iOS surface."
+                    %li.resources__element= "Add follow button for publications on Android."
+                    %li.resources__element= "Fetched and displayed a new stream, using existing stream item styles."
 
                   .subtitle
                     .subtitle__image
                       = image_tag 'resources-icon.svg'
                     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
                       = "Useful resources"
-                  %ul
-                    %li
-                      = "link-1-resource.com"
-                    %li
-                      = "link-2ruby-resource.com"
-                    %li
-                      = "link-3—nice-resource.com"
-                    %li
-                      = "link-4-not-bad-resource.com"
+                  %ul.resources__list
+                    %li.resources__element= "link-1-resource.com"
+                    %li.resources__element= "link-2ruby-resource.com"
+                    %li.resources__element= "link-3—nice-resource.com"
+                    %li.resources__element= "link-4-not-bad-resource.com"
+
+          .linear__separator
+
+          .subtitle
+            .subtitle__image
+              = image_tag 'advisors-icon.svg'
+            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+              = "Mentors"
+          .text
+            = "Please contact the following people if you need some advice on your path."
+
+          .cards__container
+            .card
+              .card__photo
+              .card__name
+              .card__level
 
 
 :javascript
   $(document).ready( function() {
     new Egf.BulmaTabs().init();
-    new Egf.BulmaStepTabs().init();
+    new Egf.StepTabs().init();
   });

@@ -2,21 +2,25 @@
 "use strict";
 
 window.Egf = window.Egf || {};
-Egf.BulmaStepTabs = function() {};
+Egf.StepTabs = function() {};
 
-Egf.BulmaStepTabs.prototype = {
+Egf.StepTabs.prototype = {
   init: function() {
-    this.initTabs();
+    let tabsContainers = document.querySelectorAll(".steps__container");
+    let _this = this;
+    tabsContainers.forEach(function(tabsContainer) {
+      _this.initTabs(tabsContainer);
+    });
   },
 
-  initTabs: function() {
-    let tabs = document.querySelectorAll(".step_tabs .step_tabs__item");
-    let tabsContent = document.querySelectorAll(".step_tab__content");
+  initTabs: function(tabsContainer) {
+    let tabs = tabsContainer.querySelectorAll(".steps .steps__item");
+    let tabsContent = tabsContainer.querySelectorAll(".step__content");
 
     let deactvateAllTabs = function () {
       tabs.forEach(function (tab) {
-        let tabMarker = tab.children.item("step_tabs__marker");
-        tabMarker.classList.remove("step_tabs__marker--active");
+        let tabMarker = tab.children.item("steps__marker");
+        tabMarker.classList.remove("steps__marker--active");
       });
     };
 
@@ -38,8 +42,8 @@ Egf.BulmaStepTabs.prototype = {
       tab.addEventListener("click", function () {
         deactvateAllTabs();
         hideTabsContent();
-        let tabMarker = tab.children.item("step_tabs__marker");
-        tabMarker.classList.add("step_tabs__marker--active");
+        let tabMarker = tab.children.item("steps__marker");
+        tabMarker.classList.add("steps__marker--active");
         activateTabsContent(tab);
       });
     });

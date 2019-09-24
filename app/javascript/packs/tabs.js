@@ -33,12 +33,19 @@ Egf.BulmaTabs.prototype = {
           return [...el.parentElement.children].indexOf(el);
         };
 
+        let resetStepTabs = function(tab) {
+          let tabContent = tabsContent[getIndex(tab)]
+          let tabsContainer = tabContent.querySelector(".steps__container");
+          new Egf.StepTabs().initTabs(tabsContainer);
+        };
+
         tabs.forEach(function (tab) {
           tab.addEventListener("click", function () {
             deactvateAllTabs();
             hideTabsContent();
             tab.classList.add("is-active");
             activateTabsContent(tab);
+            resetStepTabs(tab);
           });
         })
 
