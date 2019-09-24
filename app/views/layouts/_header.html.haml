@@ -4,10 +4,11 @@
       =link_to(image_tag('michelada_icon.png'), root_path)
       .app__name
         EGF
-    .navbar__items.column
-      =link_to(image_tag('building-icon.svg'), new_goal_path)
-      =link_to(image_tag('circle-icon.svg'), goals_path)
-      .line
-        |
-      .profile
-        =link_to(image_tag('profile_icon.png'), career_path_path(id: 1))
+    - if current_user
+      .navbar__items.column
+        =link_to(image_tag('building-icon.svg'), new_goal_path)
+        =link_to(image_tag('circle-icon.svg'), goals_path)
+        .line
+          |
+        .profile
+          =link_to(image_tag('profile_icon.png'), career_path_path(id: 1))
