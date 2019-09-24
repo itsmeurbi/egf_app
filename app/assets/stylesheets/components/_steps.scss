@@ -1,4 +1,4 @@
-.step_tabs {
+.steps {
   font-size: $size-normal;
   min-height: $size-normal * 2;
 
@@ -8,7 +8,7 @@
   flex-wrap: wrap;
 }
 
-.step_tabs__item {
+.steps__item {
   margin-top: 0;
   position: relative;
   flex-grow: 1;
@@ -39,7 +39,7 @@
 }
 
 
-.step_tabs__marker {
+.steps__marker {
   align-items: center;
   background: $white;
   border: 0.1em solid $reddish-pink;
@@ -55,12 +55,12 @@
   z-index: 1;
 }
 
-.step_tabs__marker--active {
+.steps__marker--active {
   color: $white;
   background-color: $reddish-pink;
 }
 
-.step_tabs__item--completed {
+.steps__item--completed {
   &::after {
     display: block;
     left: 58%;
@@ -71,7 +71,7 @@
   }
 }
 
-.step_tab__content {
+.step__content {
   display: none;
 
   &.is-active {

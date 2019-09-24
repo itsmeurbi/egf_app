@@ -6,7 +6,7 @@ Egf.StepTabs = function() {};
 
 Egf.StepTabs.prototype = {
   init: function() {
-    let tabsContainers = document.querySelectorAll(".step_tabs__container");
+    let tabsContainers = document.querySelectorAll(".steps__container");
     let _this = this;
     tabsContainers.forEach(function(tabsContainer) {
       _this.initTabs(tabsContainer);
@@ -14,13 +14,13 @@ Egf.StepTabs.prototype = {
   },
 
   initTabs: function(tabsContainer) {
-    let tabs = tabsContainer.querySelectorAll(".step_tabs .step_tabs__item");
-    let tabsContent = tabsContainer.querySelectorAll(".step_tab__content");
+    let tabs = tabsContainer.querySelectorAll(".steps .steps__item");
+    let tabsContent = tabsContainer.querySelectorAll(".step__content");
 
     let deactvateAllTabs = function () {
       tabs.forEach(function (tab) {
-        let tabMarker = tab.children.item("step_tabs__marker");
-        tabMarker.classList.remove("step_tabs__marker--active");
+        let tabMarker = tab.children.item("steps__marker");
+        tabMarker.classList.remove("steps__marker--active");
       });
     };
 
@@ -42,8 +42,8 @@ Egf.StepTabs.prototype = {
       tab.addEventListener("click", function () {
         deactvateAllTabs();
         hideTabsContent();
-        let tabMarker = tab.children.item("step_tabs__marker");
-        tabMarker.classList.add("step_tabs__marker--active");
+        let tabMarker = tab.children.item("steps__marker");
+        tabMarker.classList.add("steps__marker--active");
         activateTabsContent(tab);
       });
     });

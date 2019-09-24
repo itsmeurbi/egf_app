@@ -23,16 +23,16 @@
             .subtitle__text.subtitle__text--medium
               Levels
 
-          .step_tabs__container
-            .step_tabs
+          .steps__container
+            .steps
               - track.milestones.each_with_index do |milestone, index|
-                .step_tabs__item.step_tabs__item--completed
-                  .step_tabs__marker{ class: ("step_tabs__marker--active" if index.eql?(0)) }
+                .steps__item.steps__item--completed
+                  .steps__marker{ class: ("steps__marker--active" if index.eql?(0)) }
                     = milestone.level
 
             %div
               - track.milestones.each do |milestone|
-                %section.step_tab__content
+                %section.step__content
                   .subtitle
                     .subtitle__image
                       = image_tag 'flag-icon.svg'

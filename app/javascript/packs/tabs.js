@@ -35,7 +35,7 @@ Egf.BulmaTabs.prototype = {
 
         let resetStepTabs = function(tab) {
           let tabContent = tabsContent[getIndex(tab)]
-          let tabsContainer = tabContent.querySelector(".step_tabs__container");
+          let tabsContainer = tabContent.querySelector(".steps__container");
           new Egf.StepTabs().initTabs(tabsContainer);
         };
 
