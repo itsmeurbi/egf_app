@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :tasks, only: [:new]
   resources :objectives, only: [:new]
   resources :categories, only: [:show, :index], param: :name
-  resources :career_path, only: [:show]
+  resources :achievements, only: [:index]
 
   get 'auth/:provider/callback', to: 'sessions#google_auth'
   get 'auth/failure', to: redirect('/')
