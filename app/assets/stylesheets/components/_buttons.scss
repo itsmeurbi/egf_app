@@ -5,9 +5,13 @@
   color: $alto;
 }
 
-.button--reddish {
-  border: solid 2px $reddish-pink;
+.button__color--reddish {
   color: $reddish-pink;
+}
+
+.button__border--reddish {
+  border-radius: 10px;
+  border: solid 1px $reddish-pink;
 }
 
 .button__filled--alto {

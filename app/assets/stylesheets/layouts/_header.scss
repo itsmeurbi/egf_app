@@ -11,9 +11,13 @@
       align-items: center;
       background-color: $concrete;
 
+      a {
+        margin-left: 10px;
+      }
+
       img {
-        width: 45px;
-        height: 45px;
+        width: 36px;
+        height: 36px;
       }
 
       .app__name {
@@ -23,6 +27,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
+        margin-left: 13px;
       }
     }
 
@@ -39,8 +44,9 @@
 
       .profile {
         img {
-          width: 45px;
-          height: 45px;
+          width: 36px;
+          height: 36px;
+          border-radius: 50px;
         }
       }
 

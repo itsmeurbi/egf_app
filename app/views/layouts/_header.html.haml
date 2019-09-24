@@ -1,13 +1,14 @@
 .header__container
   .navbar
     .navbar__brand.column
-      = image_tag "michelada_icon.png"
+      =link_to(image_tag('michelada_icon.svg'), root_path)
       .app__name
         EGF
-    .navbar__items.column
-      = link_to(image_tag("building-icon.svg"), category_path("building"))
-      = link_to(image_tag("circle-icon.svg"), new_goal_path)
-      .line
-        |
-      .profile
-        = link_to(image_tag("profile_icon.png"), goals_path)
+    - if current_user
+      .navbar__items.column
+        =link_to(image_tag('building-icon.svg'), new_goal_path)
+        =link_to(image_tag('circle-icon.svg'), goals_path)
+        .line
+          |
+        .profile
+          =link_to(image_tag(current_user.image_url), career_path_path(id: 1))

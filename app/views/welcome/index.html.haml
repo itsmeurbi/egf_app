@@ -1,0 +1,21 @@
+.card
+  .card-image
+    %figure.image
+      .card__image--text
+        Descubre tu camino en michelada
+      =image_tag('hero-image-desk.png')
+  .content
+    .card--text
+      %b Iniciar sesión
+      %p Accede con tu cuenta de michelada.io
+    .control
+      - if current_user
+        =link_to(signout_path, method: :delete, class: 'button button--large button__filled--reddish') do
+          =image_tag('logo-miche.svg')
+          %span Logout
+      - else
+        =link_to('/auth/google_oauth2', method: :post, class: 'button button--large button__filled--reddish') do
+          =image_tag('logo-miche.svg')
+          %span Iniciar sesión
+.copyright--text
+  ®Todos los derechos reservados michelada.io 2019
