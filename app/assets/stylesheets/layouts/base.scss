@@ -11,7 +11,8 @@ body {
 
 .body__container {
   position: relative;
-  margin: 0 auto 74px !important;
+  margin: 0 auto 0 !important;
+  height: 100vh;
 }
 
 h1, h2, h3 {
@@ -24,10 +25,7 @@ h1, h2, h3 {
   padding: 0 4%;
 }
 
-.button {
-  margin: 10% auto;
-  display: block;
-}
+
 
 .column {
   padding: 0;
