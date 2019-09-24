@@ -11,7 +11,7 @@ require("jquery");
 require("bulma-accordion");
 
 require("packs/tabs");
-require("packs/step_tabs");
+require("packs/step-tabs");
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

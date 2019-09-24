@@ -2,16 +2,20 @@
 "use strict";
 
 window.Egf = window.Egf || {};
-Egf.BulmaStepTabs = function() {};
+Egf.StepTabs = function() {};
 
-Egf.BulmaStepTabs.prototype = {
+Egf.StepTabs.prototype = {
   init: function() {
-    this.initTabs();
+    let tabsContainers = document.querySelectorAll(".step_tabs__container");
+    let _this = this;
+    tabsContainers.forEach(function(tabsContainer) {
+      _this.initTabs(tabsContainer);
+    });
   },
 
-  initTabs: function() {
-    let tabs = document.querySelectorAll(".step_tabs .step_tabs__item");
-    let tabsContent = document.querySelectorAll(".step_tab__content");
+  initTabs: function(tabsContainer) {
+    let tabs = tabsContainer.querySelectorAll(".step_tabs .step_tabs__item");
+    let tabsContent = tabsContainer.querySelectorAll(".step_tab__content");
 
     let deactvateAllTabs = function () {
       tabs.forEach(function (tab) {
