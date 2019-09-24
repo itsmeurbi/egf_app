@@ -1,5 +1,16 @@
-.main__container.column
-  .field
-    %label.label Google Auth
+.card
+  .card-image
+    %figure.image
+      .card__image--text
+        Descubre tu camino en michelada
+      =image_tag('hero-image-desk.png')
+  .content
+    .card--text
+      %b Iniciar sesión
+      %p Accede con tu cuenta de michelada.io
     .control
-      =link_to 'Login', authentication_path, class: 'button button--large button--reddish'
+      =link_to(authentication_path, class: 'button button--large button__filled--reddish') do
+        =image_tag('logo-miche.svg')
+        %span Iniciar sesión
+.copyright--text
+  ®Todos los derechos reservados michelada.io 2019

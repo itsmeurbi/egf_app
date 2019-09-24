@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :tasks, only: [:new]
   resources :objectives, only: [:new]
   resources :career_path, only: [:show]
+
+  get 'auth/auth0', as: 'authentication'        # Triggers authentication process
+  get 'auth/auth0/callback', to: 'auth0#callback' # Authentication successful
+  get 'auth/failure', to: 'auth0#failure'         # Authentication fail
 end

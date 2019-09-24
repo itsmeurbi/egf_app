@@ -15,7 +15,7 @@
       .objective__definition
         %b Define Objective
         %p 120 characters
-      = text_area_tag 'task-textarea', 'Example: Improve Code Quality', class: 'textarea white', size: "10x2"
+      = text_area_tag 'task-textarea', 'Example: Improve Code Quality', class: 'textarea textarea--white', size: "10x2"
   .wizard__container
     .wizard__step
       .wizard__step--disabled
@@ -27,5 +27,5 @@
       .wizard__step--disabled
       %span Task
   .buttons__container
-    = link_to('Cancel', root_path, class: 'button button--reddish button--small')
+    = link_to('Cancel', root_path, class: 'button button__color--reddish button__border--reddish button--small')
     = link_to('Next', new_task_path, class: 'button button__filled--reddish button--small')

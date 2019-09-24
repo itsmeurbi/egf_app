@@ -1,0 +1,57 @@
+.card {
+  box-shadow: none;
+}
+
+.card-image {
+  figure {
+    position: relative;
+  }
+
+  img {
+    object-fit: cover;
+    height: 361px;
+  }
+}
+
+.card__image--text {
+  position: absolute;
+  bottom: 0px;
+  font-family: $monserrat-bold;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: $white;
+  width: 64%;
+  padding: 0 0 5% 4%;
+}
+
+.card--text {
+  color: $black;
+  padding: 4%;
+
+  b {
+    font-size: 18px;
+  }
+}
+
+.content {
+  a {
+    display: flex;
+    justify-content: end;
+
+    span {
+      padding-left: 20px;
+      font-weight: 800;
+    }
+  }
+}
+
+.copyright--text {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 13px;
+  color: $jumbo;
+  text-align: center;
+  margin-bottom: 4%;
+}

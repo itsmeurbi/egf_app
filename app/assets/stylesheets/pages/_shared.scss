@@ -67,11 +67,6 @@
   color: $white;
 }
 
-.border--reddish {
-  border-radius: 4px;
-  border: solid 1px $reddish-pink;
-}
-
 .concrete {
   background-color: $concrete;
 }
@@ -93,7 +88,7 @@
   }
 }
 
-.white {
+.textarea--white {
   background-color: $white;
   border: solid 1px $alto;
 }
