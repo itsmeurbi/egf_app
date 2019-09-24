@@ -41,7 +41,7 @@ jobs:
       # Run Rubocop checks
       - run: bundle exec rubocop
       # Run vulnerability checks for gems
-      - run: bundle exec bundle-audit update && bundle exec bundle-audit check
+      - run: bundle exec bundle-audit update && bundle exec bundle-audit check --ignore CVE-2015-9284
       # Run static analysis security vulnerability scanning
       - run: bundle exec brakeman --exit-on-warn .
       # Setup the database
