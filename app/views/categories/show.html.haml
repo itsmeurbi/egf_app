@@ -74,6 +74,20 @@
 
           .linear__separator
 
+          .subtitle
+            .subtitle__image
+              = image_tag 'advisors-icon.svg'
+            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+              = "Mentors"
+          .text
+            = "Please contact the following people if you need some advice on your path."
+
+          .cards__container
+            .card
+              .card__photo
+              .card__name
+              .card__level
+
 
 :javascript
   $(document).ready( function() {
