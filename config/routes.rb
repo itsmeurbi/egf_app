@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :goals, only: [:index, :new]
   resources :tasks, only: [:new]
   resources :objectives, only: [:new]
+  resources :categories, only: [:show, :index], param: :name
   resources :career_path, only: [:show]
 
   get 'auth/:provider/callback', to: 'sessions#google_auth'
