@@ -1,14 +1,18 @@
 .footer
   .categories__container
     .category
-      =link_to(image_tag("building-icon-active.svg"), category_path("building"))
-      %p Building
+      =link_to(category_path("building")) do
+        =image_tag(category_icon("building"))
+        %p Building
     .category
-      =link_to(image_tag("executing-icon.svg"), category_path("executing"))
-      %p Executing
+      =link_to(category_path("executing")) do
+        =image_tag(category_icon("executing"))
+        %p Executing
     .category
-      =link_to(image_tag("supporting-icon.svg"), category_path("supporting"))
-      %p Supporting
+      =link_to(category_path("supporting")) do
+        =image_tag(category_icon("supporting"))
+        %p Supporting
     .category
-      =link_to(image_tag("strengthening-icon.svg"), category_path("strengthening"))
-      %p Strengthening
+      =link_to(category_path("strengthening")) do
+        =image_tag(category_icon("strengthening"))
+        %p Strengthening
