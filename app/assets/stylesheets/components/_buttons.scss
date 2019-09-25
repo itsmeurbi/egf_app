@@ -55,6 +55,10 @@
   margin: 10% 0;
 }
 
+.button--edit {
+  margin-top: 2%;
+}
+
 .button[disabled], fieldset[disabled] .button {
   border-color: $reddish-pink;
 }

@@ -1,9 +1,9 @@
 = f.fields_for :objectives do |objective_form|
-  .title Define Objective
+  .title Definir Objetivo
   .subtitle__container
     .subtitle
       =image_tag 'flag-icon.svg'
-      .text The main goal in this level
+      .text Objetivo principal en este nivel
     %p Design major new features and demostrates a nuanced understanding of mobile platform constrains
   .subtitle__container
     .subtitle
@@ -13,6 +13,6 @@
   .container
     .create__task
       .objective__definition
-        %b Define Objective
-        %p 120 characters
+        %b Definir Objetivo
+        %p 120 characteres
       = objective_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')

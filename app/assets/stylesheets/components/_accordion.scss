@@ -28,6 +28,10 @@
       }
     }
   }
+
+  .path__container {
+    width: 90%;
+  }
 }
 
 .accordions .accordion .accordion-header {
@@ -48,6 +52,7 @@
     background-image: url('more-icon.svg');
     background-repeat: no-repeat;
     border: none;
+    margin-top: 4%;
   }
 
   &.is-active {
@@ -147,4 +152,8 @@
 
 .accordions .accordion a:not(.button):not(.tag) {
   color: $reddish-pink;
+}
+
+.accordions .accordion .accordion-header {
+  align-items: baseline;
 }

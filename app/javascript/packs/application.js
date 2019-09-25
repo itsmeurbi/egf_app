@@ -15,6 +15,7 @@ require('packs/nested-accordion');
 require("packs/tabs");
 require("packs/steps");
 require("packs/dependent-select");
+require("packs/wizard");
 
 import bulmaAccordion from 'bulma-accordion';
 window.Egf = window.Egf || {};

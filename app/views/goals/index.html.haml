@@ -1,12 +1,5 @@
 .main__container.column
-  .title My goal
-  .subtitle__container
-    .subtitle
-      =image_tag 'time-icon.svg'
-      .text Time Frame
-  .timeframe
-    %p 03/09/2009 to 03/02/2020
-    = link_to('Edit', '#', class: 'reddish')
+  .title Mi meta
   .linear__separator
   %section.goal__container.accordions
     %article.accordion
@@ -15,7 +8,7 @@
           .subtitle__container
             .subtitle
               =image_tag 'circle-icon.svg'
-              .text Path 1
+              .text Trayecto 1
           .breadcrumb__path
             %nav.breadcrumb
               %ul
@@ -25,6 +18,13 @@
                   =link_to('Mobile', '#')
                 %li
                   =link_to('level 3', '#', class: 'is-active')
+          .subtitle__container
+            .subtitle
+              =image_tag 'time-icon.svg'
+              .text Periodo
+          .timeframe
+            %p 03/09/2009 to 03/02/2020
+          = link_to('Editar', '#', class: 'reddish button--edit')
         %button.toggle
       .accordion-body
         .accordion-content
@@ -36,7 +36,7 @@
           .subtitle__container
             .subtitle
               =image_tag 'resources-icon.svg'
-              .text Useful resources
+              .text Recursos útiles
             %ul.resources__list
               %li.reddish
                 =link_to('link-1-resource.com', '#')
@@ -50,7 +50,7 @@
             .subtitle__container.subtitle__container--objectives
               .subtitle
                 =image_tag 'tasks-icon.svg'
-                .text Objectives
+                .text Objetivos
             %section.accordions
               %article.accordion--objective
                 .accordion-header
@@ -75,18 +75,18 @@
                     = link_to('Add key result', '#', class: 'reddish')
 
             .okr__container
-              = link_to('Add OKR', '#', class: 'reddish')
+              = link_to('Agregar objetivo', '#', class: 'reddish')
               .linear__separator
             .advisors__container
               .subtitle__container
                 .subtitle
                   =image_tag 'advisors-icon.svg'
-                  .text Recommended advisors:
+                  .text Asesores recomendados:
               .advisors
                 =image_tag('karen.png')
                 %p Karen Ventura
 
-  = link_to('Add new path', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
+  = link_to('Agregar nuevo trayecto', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
 
 :javascript
   $(document).ready( function() {

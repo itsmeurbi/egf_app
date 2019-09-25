@@ -1,18 +1,18 @@
 = f.fields_for :key_results do |key_form|
-  .title Create key results
+  .title Crear key result
   .subtitle__container
     .subtitle
       =image_tag 'tasks-icon.svg'
       .text Key results
-    %p We recommend to have at least 2 to 3 tasks per cycle
+    %p Te recomendamos tener al menos 2 tareas por periodo
   .container
     .create__task
-      %b Create key result
+      %b Key result
       = key_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')
-    = link_to('Add key result', new_task_path, class: 'button button--small button__color--reddish button__border--reddish button--right')
+    -# = link_to('Add key result', new_task_path, class: 'button button--small button__color--reddish button__border--reddish button--right')
 
   .container
-    %b Current key results
+    %b Key results actualess
     .tasks__container
       .task
         .circle--not-check
@@ -22,5 +22,3 @@
         .circle--not-check
           .circle
         %p Informed the team about recent best practice changes and deprecations
-
-  = f.submit

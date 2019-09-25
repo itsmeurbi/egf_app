@@ -1,9 +1,9 @@
-.title Start Milestone
+.title Comenzar trayecto
 .subtitle__container
   .subtitle
     =image_tag 'time-icon.svg'
-    .text Time Frame
-  %p We recommend 6 months for each cycle.
+    .text Periodo
+  %p Te recomendamons periodos de 6 meses en cada ciclo
 .timeframe
   .select
     = f.date_field(:start_time)
@@ -16,19 +16,19 @@
   .subtitle__container
     .subtitle
       =image_tag 'circle-icon.svg'
-      .text Path 1
+      .text Trayecto
   .select__container
-    %b Select Category
+    %b Selecciona la categoria
     .select
       = select_tag(:category_id, options_for_select(@categories.collect{ |category| [category.name, category.id] }))
     = link_to('See details', '#', class: 'reddish text--small')
   .select__container
-    %b Select Track
+    %b Selecciona el track
     .select
       = select_tag 'track_id', options_for_select(track_data)
     .linear__separator
   .select__container
-    %b Select Milestone
+    %b Selecciona el milestone
     .select
       = f.select(:milestone_id, options_for_select(milestone_data))
     .linear__separator

@@ -9,22 +9,24 @@
         .step-content
           = render partial: 'shared/key_results_wizard', locals: { f: f }
       .wizard__container
-        .wizard__step.step-item.is-active.is-success
+        .wizard__step.step-item.is-active
           .wizard__step--circle
           %span Milestone
         .wizard__step.step-item
           .wizard__step--circle
-          %span Objective
-        .wizard__step.step-item
+          %span Objetivo
+        .wizard__step.step-item.completed
           .wizard__step--circle
           %span Key result
       .steps-actions.buttons__container
-        = link_to('Previous', root_path, class: 'button button__color--reddish button__border--reddish button--small steps-action', 'data-nav' => 'previous')
-        = link_to('Next', '#', class: 'button button__filled--reddish button--small steps-action', 'data-nav' => 'next')
+        = link_to('Previo', root_path, class: 'button button__color--reddish button__border--reddish button--small steps-action', 'data-nav' => 'previous')
+        = link_to('Siguiente', '#', class: 'button button__filled--reddish button--small steps-action button--next', 'data-nav' => 'next')
+        = f.submit('Crear', class: 'button button__color--reddish button__border--reddish button--small steps-action button--done hidden')
 
 :javascript
   $(document).ready( function() {
-    var accordions = Egf.bulmaAccordion.attach();
+    Egf.bulmaAccordion.attach();
+    Egf.bulmaSteps.attach();
     new Egf.DependentSelect().dependentSelect();
-    var steps = Egf.bulmaSteps.attach();
+    new Egf.Wizard().enableWizardButton();
   });

@@ -14,7 +14,7 @@ Egf.StepTabs.prototype = {
   },
 
   initTabs: function(tabsContainer) {
-    let tabs = tabsContainer.querySelectorAll(".steps .steps__item");
+    let tabs = tabsContainer.querySelectorAll(".levels .steps__item");
     let tabsContent = tabsContainer.querySelectorAll(".step__content");
 
     let deactvateAllTabs = function () {

@@ -6,13 +6,14 @@
           Descubre tu camino en michelada
   .content
     .card--text
-      %b Iniciar sesión
-      %p Accede con tu cuenta de michelada.io
+      - unless current_user
+        %b Iniciar sesión
+        %p Accede con tu cuenta de michelada.io
     .control
       - if current_user
         =link_to(signout_path, method: :delete, class: 'button button--large button__filled--reddish') do
           =image_tag('logo-miche.svg')
-          %span Logout
+          %span Salir
       - else
         =link_to('/auth/google_oauth2', method: :post, class: 'button button--large button__filled--reddish') do
           =image_tag('logo-miche.svg')

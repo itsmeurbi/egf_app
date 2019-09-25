@@ -92,7 +92,7 @@
   .timeframe {
     display: flex;
     justify-content: space-between;
-    margin-top: 2%;
+    margin: 2% 0;
     align-items: center;
   }
 }
@@ -104,4 +104,8 @@
 
 .circle--reddish {
   border: 1px solid $reddish-pink;
+}
+
+.hidden {
+  display: none !important;
 }
