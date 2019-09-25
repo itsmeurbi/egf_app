@@ -4,4 +4,6 @@ class Goal < ApplicationRecord
   belongs_to :user
   has_many :objectives
   has_many :resources, class_name: 'GoalResources', foreign_key: :goal_id
+
+  accepts_nested_attributes_for :objectives
 end
