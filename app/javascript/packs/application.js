@@ -13,6 +13,7 @@ require('bulma-accordion');
 require('packs/nested-accordion');
 require("packs/tabs");
 require("packs/steps");
+require("packs/dependent-select");
 
 import bulmaAccordion from 'bulma-accordion';
 window.Egf = window.Egf || {};

@@ -6,13 +6,13 @@ class GoalsController < ApplicationController
   def new
     @categories = Category.all
     @tracks = Track.all
-    @users = User.all
+    @mentors = User.mentors(current_user.email)
+    @milestones = Milestone.all
   end
 
   def goal_params
-    # params.require(:goal).permit(
-    #   :name, :price,
-    #   image_attributes: [ :id, :url, :alt, :caption ]
-    # )
+    params.require(:goal).permit(
+      :start_time, :end_time, :mentor_id
+    )
   end
 end
