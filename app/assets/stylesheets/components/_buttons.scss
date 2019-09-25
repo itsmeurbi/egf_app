@@ -48,8 +48,13 @@
 
 .buttons__container {
   display: flex;
+  margin-top: 7%;
 }
 
 .button--right {
   margin: 10% 0;
+}
+
+.button[disabled], fieldset[disabled] .button {
+  border-color: $reddish-pink;
 }

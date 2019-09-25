@@ -1,4 +1,5 @@
 .wizard__container {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin-top: 10%;
@@ -10,24 +11,23 @@
     align-items: center;
     color: $jumbo;
 
-    .wizard__step--disabled {
+    .wizard__step--circle {
       width: 8px;
       height: 8px;
+      border-radius: 50%;
       border: solid 1px $dusty-gray;
       background-color: $white;
-      border-radius: 50%;
-    }
-
-    .wizard__step--enabled {
-      width: 8px;
-      height: 8px;
-      border: solid 1px $dark;
-      background-color: $dark;
-      border-radius: 50%;
     }
 
     span {
       padding-left: 3px;
+    }
+
+    &.is-active {
+      .wizard__step--circle {
+        border: solid 1px $dark;
+        background-color: $dark;
+      }
     }
   }
 }

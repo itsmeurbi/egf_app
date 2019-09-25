@@ -1,4 +1,16 @@
+// override bulma steps class
 .steps {
+  display: inherit;
+  min-height: 100vh;
+}
+
+.steps .step-item::before {
+  background: transparent;
+}
+
+// override bulma steps class ^
+
+.custom__steps {
   font-size: $size-normal;
   min-height: $size-normal * 2;
 

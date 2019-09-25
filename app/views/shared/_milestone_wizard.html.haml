@@ -1,0 +1,43 @@
+.title Start Milestone
+.subtitle__container
+  .subtitle
+    =image_tag 'time-icon.svg'
+    .text Time Frame
+  %p We recommend 6 months for each cycle.
+.timeframe
+  .select
+    = f.date_field(:start_time)
+  %p to
+  .select
+    = f.date_field(:end_time)
+.linear__separator
+
+.goal__container.not__margin--bottom
+  .subtitle__container
+    .subtitle
+      =image_tag 'circle-icon.svg'
+      .text Path 1
+  .select__container
+    %b Select Category
+    .select
+      = select_tag(:category_id, options_for_select(@categories.collect{ |category| [category.name, category.id] }))
+    = link_to('See details', '#', class: 'reddish text--small')
+  .select__container
+    %b Select Track
+    .select
+      = select_tag 'track_id', options_for_select(track_data)
+    .linear__separator
+  .select__container
+    %b Select Milestone
+    .select
+      = f.select(:milestone_id, options_for_select(milestone_data))
+    .linear__separator
+  .subtitle__container
+    .subtitle
+      =image_tag 'advisors-icon.svg'
+      .text Mentors:
+  .select__container
+    %b Select your mentor
+    .select
+      = f.select(:mentor_id, options_for_select(@mentors.collect{ |mentor| [mentor.first_name, mentor.id] }))
+    .linear__separator

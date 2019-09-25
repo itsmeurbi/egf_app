@@ -1,10 +1,30 @@
-.wizard__container
-  .wizard__step
-    .wizard__step--enabled
-    %span Milestone
-  .wizard__step
-    .wizard__step--disabled
-    %span Objective
-  .wizard__step
-    .wizard__step--disabled
-    %span Task
+= form_for @goal do |f|
+  .main__container.column
+    .steps#stepsDemo
+      .steps-content
+        .step-content.is-active
+          = render partial: 'shared/milestone_wizard', locals: { f: f }
+        .step-content
+          = render partial: 'shared/objective_wizard', locals: { f: f }
+        .step-content
+          = render partial: 'shared/key_results_wizard', locals: { f: f }
+      .wizard__container
+        .wizard__step.step-item.is-active.is-success
+          .wizard__step--circle
+          %span Milestone
+        .wizard__step.step-item
+          .wizard__step--circle
+          %span Objective
+        .wizard__step.step-item
+          .wizard__step--circle
+          %span Key result
+      .steps-actions.buttons__container
+        = link_to('Previous', root_path, class: 'button button__color--reddish button__border--reddish button--small steps-action', 'data-nav' => 'previous')
+        = link_to('Next', '#', class: 'button button__filled--reddish button--small steps-action', 'data-nav' => 'next')
+
+:javascript
+  $(document).ready( function() {
+    var accordions = Egf.bulmaAccordion.attach();
+    new Egf.DependentSelect().dependentSelect();
+    var steps = Egf.bulmaSteps.attach();
+  });
