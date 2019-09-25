@@ -1,0 +1,27 @@
+%section.tab__content
+  .subtitle__text.subtitle__text--medium
+    = track.name.titleize
+  .text
+    = track.description
+
+  .linear__separator
+
+  .subtitle
+    .subtitle__text.subtitle__text--medium
+      Levels
+
+  .steps__container
+    .steps
+      - track.milestones.each_with_index do |milestone, index|
+        .steps__item.steps__item--completed
+          .steps__marker{ class: ("steps__marker--active" if index.eql?(0)) }
+            = milestone.level
+
+    %div
+      - track.milestones.each do |milestone|
+        = render partial: "milestone", locals: { milestone: milestone }
+
+  = render partial: "mentors"
+  = link_to('Start this milestone',
+              new_goal_path,
+              class: 'button button__filled--reddish button--large')
