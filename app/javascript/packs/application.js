@@ -9,6 +9,7 @@ require("@rails/activestorage").start();
 require("channels");
 require('jquery');
 require('bulma-accordion');
+require('bulma-steps');
 
 require('packs/nested-accordion');
 require("packs/tabs");
@@ -18,3 +19,7 @@ require("packs/dependent-select");
 import bulmaAccordion from 'bulma-accordion';
 window.Egf = window.Egf || {};
 Egf.bulmaAccordion = bulmaAccordion;
+
+import bulmaSteps from 'bulma-steps';
+window.Egf = window.Egf || {};
+Egf.bulmaSteps = bulmaSteps;
