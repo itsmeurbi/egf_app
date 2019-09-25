@@ -1,0 +1,2 @@
+class GoalResources < ApplicationRecord
+end

@@ -8,4 +8,11 @@ class GoalsController < ApplicationController
     @tracks = Track.all
     @users = User.all
   end
+
+  def goal_params
+    # params.require(:goal).permit(
+    #   :name, :price,
+    #   image_attributes: [ :id, :url, :alt, :caption ]
+    # )
+  end
 end
