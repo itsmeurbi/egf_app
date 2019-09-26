@@ -12,4 +12,8 @@ class User < ApplicationRecord
       user.image_url = auth.info.image
     end
   end
+
+  def name
+    "#{first_name} #{last_name}".titleize
+  end
 end

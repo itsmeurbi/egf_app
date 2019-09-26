@@ -34,8 +34,13 @@
     margin-top: 6%;
 
     .breadcrumb {
-      .link {
+      a {
+        padding: 0 3px;
         color: $black;
+
+        &.is-active {
+          color: $reddish-pink;
+        }
       }
     }
   }

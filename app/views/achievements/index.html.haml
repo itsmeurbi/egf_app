@@ -1,30 +1,31 @@
 .main__container.column
-  .title Career Path
+  .title Trayectoria profesional
   .paths__container
     .path__container.background--reddish.my-path
-      =link_to('My path', '#', class: 'text--white')
+      =link_to('Mis logos', '#', class: 'text--white')
     .path__container.button__border--reddish.michelada-path
-      =link_to("micheladas's path", '#', class: 'reddish')
+      =link_to("Logros de michelada", '#', class: 'reddish')
   .subtitle__container
-    %b My performance
-    %p.performance--review Your profile is mostly focused on building We recomment you to lorem ipsum
+    %b Mi desempeño
+    %p.performance--review Tu perfil mayormente se enfoca en DevOps
   .linear__separator
   .container.career-path
     .advisors__container
       .subtitle__container
         .subtitle
           =image_tag 'advisors-icon.svg'
-          .text My mentors:
+          .text Mis mentores:
       .mentors-by-level__container
-        .breadcrumb__path
-          %nav.breadcrumb
-            %ul
-              %li
-                =link_to('Building', '#')
-              %li
-                =link_to('Mobile', '#')
-              %li
-                =link_to('level 3', '#', class: 'is-active')
-        .advisors
-          =image_tag('karen.png')
-          %p Karen Ventura
+        - @goals.each do |goal|
+          .breadcrumb__path
+            %nav.breadcrumb
+              %ul
+                %li
+                  =link_to(category_name(goal), '')
+                %li
+                  =link_to(track_name(goal), '')
+                %li
+                  =link_to("level #{level(goal)}", '', class: 'is-active')
+          .advisors
+            =image_tag(goal.mentor.image_url)
+            %p= goal.mentor.name
