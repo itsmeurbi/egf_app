@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
+  before_action :authenticate_user
 
   def current_user
     return false if session[:user_id].nil?

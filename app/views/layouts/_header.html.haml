@@ -6,9 +6,12 @@
         EGF
     - if current_user
       .navbar__items.column
-        =link_to(image_tag('building-icon.svg'), categories_path)
-        =link_to(image_tag('circle-icon.svg'), goals_path)
+        = link_to(category_path("building")) do
+          =image_tag(navbar_icon("categories"), class: "navbar__item__image")
+        = link_to(new_goal_path) do
+          =image_tag(navbar_icon("goals"), class: "navbar__item__image")
         .line
           |
         .profile
-          =link_to(image_tag(current_user.image_url), achievements_path)
+          = link_to(achievements_path) do
+            =image_tag(current_user.image_url, class: "navbar__item__image")

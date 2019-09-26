@@ -1,0 +1,58 @@
+.mentor__card {
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 132px;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.mentor__card__photo {
+  height: 45px;
+  object-fit: contain;
+  width: 45px;
+}
+.mentor__card__name {
+  color: #000000;
+  font-family: $open-sans;
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  height: 36px;
+  margin-top: 5px;
+  text-align: center;
+  width: 85px;
+}
+
+.mentor__card__level {
+  color: $reddish-pink;
+  font-family: $open-sans;
+  font-size: 13px;
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: -0.08px;
+  height: 15px;
+  text-align: center;
+  width: 29px;
+}
+
+.mentors__card__container {
+  display: flex;
+  margin-top: 16px;
+  overflow: hidden;
+  overflow-x: auto;
+
+  -ms-overflow-style: none;  // IE 10+
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+}
