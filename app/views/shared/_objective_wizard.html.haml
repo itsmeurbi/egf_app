@@ -1,18 +1,18 @@
-= f.fields_for :objectives do |objective_form|
-  .title Definir Objetivo
-  .subtitle__container
-    .subtitle
-      =image_tag 'flag-icon.svg'
-      .text Objetivo principal en este nivel
-    %p Design major new features and demostrates a nuanced understanding of mobile platform constrains
-  .subtitle__container
-    .subtitle
-      =image_tag 'tasks-icon.svg'
-      .text OKR
-    %p Objectives and key results are defined by lorem ipsum...
-  .container
-    .create__task
-      .objective__definition
-        %b Definir Objetivo
-        %p 120 characteres
+.title Definir Objetivo
+.subtitle__container
+  .subtitle
+    =image_tag 'flag-icon.svg'
+    .text Objetivo principal en este nivel
+  %p Design major new features and demostrates a nuanced understanding of mobile platform constrains
+.subtitle__container
+  .subtitle
+    =image_tag 'tasks-icon.svg'
+    .text OKR
+  %p Objectives and key results are defined by lorem ipsum...
+.container
+  .create__task
+    .objective__definition
+      %b Definir Objetivo
+      %p 120 characteres
+    = f.fields_for :objectives do |objective_form|
       = objective_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')

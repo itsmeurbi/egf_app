@@ -19,7 +19,7 @@
           .wizard__step--circle
           %span Key result
       .steps-actions.buttons__container
-        = link_to('Previo', root_path, class: 'button button__color--reddish button__border--reddish button--small steps-action', 'data-nav' => 'previous')
+        = link_to('Previo', root_path, class: 'button button__color--reddish button__border--reddish button--small button--prev steps-action', 'data-nav' => 'previous')
         = link_to('Siguiente', '#', class: 'button button__filled--reddish button--small steps-action button--next', 'data-nav' => 'next')
         = f.submit('Crear', class: 'button button__color--reddish button__border--reddish button--small steps-action button--done hidden')
 

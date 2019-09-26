@@ -1,7 +1,7 @@
 module WizardHelper
   def track_data
     @tracks.collect do |track|
-      [track.name, track.id, { 'data-category-id' => track.category_id }]
+      [track.name, track.id, { 'data-category-id' => track.category_id, selected: @goal&.milestone&.track_id }]
     end
   end
 
@@ -11,11 +11,25 @@ module WizardHelper
     end
   end
 
+  def categories_data
+    @categories.collect do |category|
+      [category.name, category.id]
+    end
+  end
+
   def description(milestone)
     "#{'Level ' + milestone.level + ' ' + milestone.description}"
   end
 
   def data_attributes(milestone)
     { 'data-category-id' => milestone.track.category_id, 'data-track-id' => milestone.track_id }
+  end
+
+  def category_id
+    @goal&.milestone&.track&.category_id
+  end
+
+  def track_id
+    @goal&.milestone&.track_id
   end
 end

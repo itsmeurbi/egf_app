@@ -25,7 +25,7 @@
                 .text Periodo
             .timeframe
               %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
-            = link_to('Editar', '#', class: 'reddish button--edit')
+            = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
           %button.toggle
         .accordion-body
           .accordion-content
