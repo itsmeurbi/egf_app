@@ -47,3 +47,5 @@ group :development, :test do
   gem 'brakeman'
   gem 'rubocop', require: false
 end
+
+gem "react-rails", "~> 2.6"

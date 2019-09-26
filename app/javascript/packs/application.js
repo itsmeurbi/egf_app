@@ -9,6 +9,7 @@ require("@rails/activestorage").start();
 require("channels");
 require('jquery');
 require('bulma-accordion');
+require('d3');
 
 require('packs/nested-accordion');
 require("packs/tabs");
@@ -17,3 +18,8 @@ require("packs/steps");
 import bulmaAccordion from 'bulma-accordion';
 window.Egf = window.Egf || {};
 Egf.bulmaAccordion = bulmaAccordion;
+
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true);
+var ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);
