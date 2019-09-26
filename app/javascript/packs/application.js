@@ -16,6 +16,7 @@ require("packs/tabs");
 require("packs/steps");
 require("packs/dependent-select");
 require("packs/wizard");
+require("packs/modal");
 
 import bulmaAccordion from 'bulma-accordion';
 window.Egf = window.Egf || {};

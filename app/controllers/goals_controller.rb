@@ -26,24 +26,24 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
 
-    respond_to do |format|
-      if @goal.save
-        save_key_result
-        format.html { redirect_to goals_path, notice: 'Your goal was successfully created.' }
-      else
-        format.html { redirect_to new_goal_path }
-      end
+    if @goal.save
+      save_key_result
+      flash[:success] = 'Tu meta ha sido creada exitosamente'
+      redirect_to goals_path
+    else
+      flash[:error] = @goal.errors
+      redirect_to new_goal_path
     end
   end
 
   def update
-    respond_to do |format|
-      if @goal.update(goal_params)
-        format.html { redirect_to goals_path, notice: 'High score was successfully updated.' }
-      else
-        format.html { redirect_to goals_path }
-      end
+    if @goal.update(goal_params)
+      flash[:success] = 'Tu meta ha sido actualizada exitosamente'
+    else
+      flash[:error] = @goal.errors
     end
+
+    redirect_to goals_path
   end
 
   private
