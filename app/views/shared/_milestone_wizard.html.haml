@@ -1,9 +1,9 @@
 .title Comenzar trayecto
-.subtitle__container
-  .subtitle
+.subtitle
+  .subtitle__image
     =image_tag 'time-icon.svg'
-    .text Periodo
-  %p Te recomendamons periodos de 6 meses en cada ciclo
+  .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Periodo
+.text Te recomendamons periodos de 6 meses en cada ciclo
 .timeframe
   .select
     = f.date_field(:start_time)
@@ -13,10 +13,10 @@
 .linear__separator
 
 .goal__container.not__margin--bottom
-  .subtitle__container
-    .subtitle
+  .subtitle
+    .subtitle__image
       =image_tag 'circle-icon.svg'
-      .text Trayecto
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Trayecto
   .select__container
     %b Selecciona la categoria
     .select
@@ -32,10 +32,10 @@
     .select
       = f.select(:milestone_id, options_for_select(milestone_data, @goal&.milestone_id))
     .linear__separator
-  .subtitle__container
-    .subtitle
+  .subtitle
+    .subtitle__image
       =image_tag 'advisors-icon.svg'
-      .text Mentors:
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Mentors:
   .select__container
     %b Select your mentor
     .select

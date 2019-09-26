@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :goals, only: [:index, :new, :create, :edit, :update]
-  resources :tasks, only: [:new]
   resources :objectives, only: [:new]
   resources :categories, only: [:show, :index], param: :name
   resources :achievements, only: [:index]

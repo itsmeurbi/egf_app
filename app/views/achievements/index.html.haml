@@ -5,16 +5,17 @@
       =link_to('Mis logos', '#', class: 'text--white')
     .path__container.button__border--reddish.michelada-path
       =link_to("Logros de michelada", '#', class: 'reddish')
-  .subtitle__container
+  .subtitle__text.subtitle__text--medium
     %b Mi desempeño
-    %p.performance--review Tu perfil se enfoca mayormente en DevOps
+  .text.performance--review Tu perfil se enfoca mayormente en DevOps
   .linear__separator
   .container.career-path
     .advisors__container
-      .subtitle__container
-        .subtitle
+      .subtitle
+        .subtitle__image
           =image_tag 'advisors-icon.svg'
-          .text Mis mentores:
+        .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+          Mis mentores:
       .mentors-by-level__container
         - @goals.each do |goal|
           .breadcrumb__path

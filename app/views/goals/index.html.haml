@@ -6,10 +6,11 @@
       %article.accordion
         .accordion-header
           .path__container
-            .subtitle__container
-              .subtitle
+            .subtitle
+              .subtitle__image
                 =image_tag 'circle-icon.svg'
-                .text= "Trayecto #{index + 1}"
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                ="Trayecto #{index + 1}"
             .breadcrumb__path
               %nav.breadcrumb
                 %ul
@@ -19,64 +20,57 @@
                     =link_to(track_name(goal), '')
                   %li
                     =link_to("level #{level(goal)}", '', class: 'is-active')
-            .subtitle__container
-              .subtitle
+            .subtitle
+              .subtitle__image
                 =image_tag 'time-icon.svg'
-                .text Periodo
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Periodo
             .timeframe
               %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
             = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
           %button.toggle
         .accordion-body
           .accordion-content
-            .subtitle__container
-              .subtitle
+            .subtitle
+              .subtitle__image
                 =image_tag 'flag-icon.svg'
-                .text La meta principal en este nivel
-              %p= goal.milestone.description
-            .subtitle__container
-              .subtitle
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                La meta principal en este nivel
+            .text= goal.milestone.description
+            .subtitle
+              .subtitle__image
                 =image_tag 'resources-icon.svg'
-                .text Recursos útiles
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Recursos útiles
               %ul.resources__list
                 - goal.resources.each do |resource|
                   %li.reddish
                     =link_to(resource.name, resource.url, target: '_blank')
+            .subtitle
+              .subtitle__image
+                =image_tag 'tasks-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Objetivo
             .container.acordion--objectives
-              .subtitle__container.subtitle__container--objectives
-                .subtitle
-                  =image_tag 'tasks-icon.svg'
-                  .text Objetivos
+              .objective= goal.objectives.first.description
               %section.accordions
-                - goal.objectives.each_with_index do |objective, index|
-                  %article.accordion--objective
-                    .accordion-header
-                      %p= "#{index+1} #{objective.description}"
-                      %button.toogle
-                    .accordion-body
-                      .accordion-content
-                        .subtitle__container
-                          %b Key results
-                        .tasks__container
-                          - objective.key_results.each do |key|
-                            .task
-                              - if key.completed?
-                                %i.fas.fa-check-circle
-                              - else
-                                .circle--not-check
-                                  .circle.circle--reddish
+                %article.accordion--objective
+                  .accordion-header
+                    %b Key results
+                    %button.toogle
+                  .accordion-body
+                    .accordion-content
+                      .tasks__container
+                        = render partial: 'key_results', collection: goal.objectives.first.key_results, as: :key
+                      = link_to('Add key result', '#', class: 'reddish')
 
-                              %p= key.description
-                          = link_to('Add key result', '#', class: 'reddish')
-
-              .okr__container
-                = link_to('Agregar objetivo', '#', class: 'reddish')
-                .linear__separator
+              .linear__separator
               .advisors__container
-                .subtitle__container
-                  .subtitle
+                .subtitle.subtitle--advisors
+                  .subtitle__image
                     =image_tag 'advisors-icon.svg'
-                    .text Asesores recomendados:
+                  .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                    Asesores recomendados:
                 .advisors
                   =image_tag('karen.png')
                   %p Karen Ventura
