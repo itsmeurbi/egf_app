@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_010034) do
+ActiveRecord::Schema.define(version: 2019_09_26_002445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_09_25_010034) do
   create_table "key_results", force: :cascade do |t|
     t.string "description"
     t.bigint "objective_id"
+    t.boolean "completed", default: false
     t.index ["objective_id"], name: "index_key_results_on_objective_id"
   end
 

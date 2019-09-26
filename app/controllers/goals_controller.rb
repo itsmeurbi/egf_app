@@ -2,7 +2,9 @@ class GoalsController < ApplicationController
   before_action :authenticate_user
   before_action :set_user_id, only: [:create]
 
-  def index; end
+  def index
+    @goals = Goal.all
+  end
 
   def new
     @categories = Category.all
