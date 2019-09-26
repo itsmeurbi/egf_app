@@ -18,7 +18,7 @@ module WizardHelper
   end
 
   def description(milestone)
-    "#{'Level ' + milestone.level + ' ' + milestone.description}"
+    'Level ' + milestone.level.to_s + ' ' + milestone.description.to_s
   end
 
   def data_attributes(milestone)

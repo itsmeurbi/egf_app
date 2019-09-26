@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
   before_action :authenticate_user
-  before_action :set_user_id, only: [:create]
-  before_action :set_goal, only: [:edit, :update]
+  before_action :set_user_id, only: %i[create]
+  before_action :set_goal, only: %i[edit update]
 
   def index
     @goals = Goal.all
