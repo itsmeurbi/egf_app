@@ -1,0 +1,9 @@
+mobile:
+  name: mobile
+  description: Create your first Mobile app
+  url: www.google.com
+
+devops:
+  name: devops
+  description: Setup the server
+  url: www.google.com
