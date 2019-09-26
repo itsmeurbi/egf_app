@@ -1,95 +1,84 @@
 .main__container.column
-  .title My goal
-  .subtitle__container
-    .subtitle
-      =image_tag 'time-icon.svg'
-      .text Time Frame
-  .timeframe
-    %p 03/09/2009 to 03/02/2020
-    = link_to('Edit', '#', class: 'reddish')
+  .title Mi meta
   .linear__separator
   %section.goal__container.accordions
-    %article.accordion
-      .accordion-header
-        .path__container
-          .subtitle__container
+    - @goals.each_with_index do |goal, index|
+      %article.accordion
+        .accordion-header
+          .path__container
             .subtitle
-              =image_tag 'circle-icon.svg'
-              .text Path 1
-          .breadcrumb__path
-            %nav.breadcrumb
-              %ul
-                %li
-                  =link_to('Building', '#')
-                %li
-                  =link_to('Mobile', '#')
-                %li
-                  =link_to('level 3', '#', class: 'is-active')
-        %button.toggle
-      .accordion-body
-        .accordion-content
-          .subtitle__container
+              .subtitle__image
+                =image_tag 'circle-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                ="Trayecto #{index + 1}"
+            .breadcrumb__path
+              %nav.breadcrumb
+                %ul
+                  %li
+                    =link_to(category_name(goal), '')
+                  %li
+                    =link_to(track_name(goal), '')
+                  %li
+                    =link_to("level #{level(goal)}", '', class: 'is-active')
             .subtitle
-              =image_tag 'flag-icon.svg'
-              .text The main goal in this level
-            %p Designs major new features and demostrates a nuanced understanding of mobile platform constrains
-          .subtitle__container
+              .subtitle__image
+                =image_tag 'time-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Periodo
+            .timeframe
+              %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
+            = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
+          %button.toggle
+        .accordion-body
+          .accordion-content
             .subtitle
-              =image_tag 'resources-icon.svg'
-              .text Useful resources
-            %ul.resources__list
-              %li.reddish
-                =link_to('link-1-resource.com', '#')
-              %li.reddish
-                =link_to('link-1-resource.com', '#')
-              %li.reddish
-                =link_to('link-1-resource.com', '#')
-              %li.reddish
-                =link_to('link-1-resource.com', '#')
-          .container.acordion--objectives
-            .subtitle__container.subtitle__container--objectives
-              .subtitle
+              .subtitle__image
+                =image_tag 'flag-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                La meta principal en este nivel
+            .text= goal.milestone.description
+            .subtitle
+              .subtitle__image
+                =image_tag 'resources-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Recursos útiles
+              %ul.resources__list
+                - goal.resources.each do |resource|
+                  %li.reddish
+                    =link_to(resource.name, resource.url, target: '_blank')
+            .subtitle
+              .subtitle__image
                 =image_tag 'tasks-icon.svg'
-                .text Objectives
-            %section.accordions
-              %article.accordion--objective
-                .accordion-header
-                  %p 1 Lauch test automation framework
-                  %button.toogle
-                .accordion-body
-                  .accordion-content
-                    .subtitle__container
-                      %b Tasks
-                    .tasks__container
-                      .task
-                        %i.fas.fa-check-circle
-                        %p Designed iOs caching strategy for offline reading
-                      .task
-                        .circle--not-check
-                          .circle.circle--reddish
-                        %p Built series reader on Android
-                      .task
-                        .circle--not-check
-                          .circle.circle--reddish
-                        %p Informed the team about recent best practice changes and deprecations
-                    = link_to('Add task', '#', class: 'reddish')
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Objetivo
+            .container.acordion--objectives
+              .objective= goal.objectives.first.description
+              %section.accordions
+                %article.accordion--objective
+                  .accordion-header
+                    %b Key results
+                    %button.toogle
+                  .accordion-body
+                    .accordion-content
+                      .tasks__container
+                        = render partial: 'key_results', collection: goal.objectives.first.key_results, as: :key
+                      = link_to('Add key result', '#', class: 'reddish')
 
-            .okr__container
-              = link_to('Add OKR', '#', class: 'reddish')
               .linear__separator
-            .advisors__container
-              .subtitle__container
-                .subtitle
-                  =image_tag 'advisors-icon.svg'
-                  .text Recommended advisors:
-              .advisors
-                =image_tag('karen.png')
-                %p Karen Ventura
-
-  = link_to('Add new path', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
+              .advisors__container
+                .subtitle.subtitle--advisors
+                  .subtitle__image
+                    =image_tag 'advisors-icon.svg'
+                  .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                    Asesores recomendados:
+                .advisors
+                  =image_tag('karen.png')
+                  %p Karen Ventura
+      .linear__separator
+  = link_to('Agregar nuevo trayecto', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
 
 :javascript
   $(document).ready( function() {
-    var accordions = Egf.bulmaAccordion.attach();
+    Egf.bulmaAccordion.attach();
     new Egf.NestedAccordion().nestedAccordion();
   });

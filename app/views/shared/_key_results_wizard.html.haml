@@ -1,0 +1,24 @@
+= f.fields_for :key_results do |key_form|
+  .title Crear key result
+  .subtitle
+    .subtitle__image
+      =image_tag 'tasks-icon.svg'
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Key results
+  .text Te recomendamos tener al menos 2 tareas por periodo
+  .container
+    .create__task
+      %b Key result
+      = key_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')
+    = link_to('Add key result', '', class: 'button button--small button__color--reddish button__border--reddish button--right')
+
+  .container
+    %b Key results actualess
+    .tasks__container
+      .task
+        .circle--not-check
+          .circle
+        %p Built series reader on Android
+      .task
+        .circle--not-check
+          .circle
+        %p Informed the team about recent best practice changes and deprecations

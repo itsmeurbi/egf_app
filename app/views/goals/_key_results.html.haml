@@ -1,0 +1,7 @@
+.task
+  - if key.completed?
+    %i.fas.fa-check-circle
+  - else
+    .circle--not-check
+      .circle.circle--reddish
+  %p= key.description

@@ -49,8 +49,36 @@
 
 .buttons__container {
   display: flex;
+  margin-top: 7%;
 }
 
 .button--right {
   margin: 10% 0;
+}
+
+.button--edit {
+  margin-top: 2%;
+}
+
+.button--next, .button--done {
+  background-color: $reddish-pink;
+  color: $white;
+}
+
+.button[disabled], fieldset[disabled] .button {
+  border-color: $reddish-pink;
+}
+
+.button:focus:not(:active), .button.is-focused:not(:active) {
+  box-shadow: none;
+  color: $white;
+
+  &.button--prev {
+    color: $reddish-pink;
+  }
+}
+
+.button:focus, .button.is-focused {
+  border-color: $reddish-pink;
+  color: $reddish-pink;
 }

@@ -13,5 +13,5 @@
         .line
           |
         .profile
-          = link_to(goals_path) do
-            =image_tag("profile_icon.png", class: "navbar__item__image")
+          = link_to(achievements_path) do
+            =image_tag(current_user.image_url, class: "navbar__item__image")

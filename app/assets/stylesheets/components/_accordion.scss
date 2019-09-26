@@ -4,16 +4,8 @@
   border-radius: none;
 }
 
-.accordions .accordion .accordion-header+.accordion-body .accordion-content {
-  padding: 0;
-}
-
-.accordions .accordion .accordion-header + .accordion-body {
-  border: none;
-}
-
 .accordion-content {
-  .subtitle__container {
+  .subtitle, .text {
     padding: 0 4%;
   }
 }
@@ -27,6 +19,10 @@
         color: $black;
       }
     }
+  }
+
+  .path__container {
+    width: 90%;
   }
 }
 
@@ -48,6 +44,7 @@
     background-image: url('more-icon.svg');
     background-repeat: no-repeat;
     border: none;
+    margin-top: 4%;
   }
 
   &.is-active {
@@ -114,30 +111,17 @@
     border: 1px solid $reddish-pink;
   }
 
-  .subtitle__container--objectives {
-    background-color: $concrete;
-    padding: 10px 4%;
-  }
-
   .accordion-header {
     padding: 0;
     display: flex;
     align-items: flex-end;
     padding: 6px 4%;
     background-color: $concrete;
-
-    .subtitle__container {
-      width: 80%;
-    }
   }
 
   .accordion-content {
     padding: 0 4% !important;
     margin-bottom: 5%;
-  }
-
-  .okr__container {
-    padding: 10px 4% 0;
   }
 
   .advisors__container {
@@ -147,4 +131,29 @@
 
 .accordions .accordion a:not(.button):not(.tag) {
   color: $reddish-pink;
+}
+
+.accordions .accordion .accordion-header {
+  align-items: baseline;
+  color: $black;
+}
+
+.main__container .goal__container .linear__separator {
+  margin: 5%;
+}
+
+.accordion-content .advisors__container .subtitle--advisors {
+  padding: 0;
+}
+
+.objective {
+  padding: 0 4%;
+}
+
+.accordions .accordion .accordion-header+.accordion-body {
+  border: none;
+
+  .accordion-content {
+    padding: 0;
+  }
 }
