@@ -52,7 +52,7 @@
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
                 Objetivo
             .container.acordion--objectives
-              .objective= goal.objectives.first.description
+              .objective= goal.objective.description
               %section.accordions
                 %article.accordion--objective
                   .accordion-header
@@ -61,7 +61,7 @@
                   .accordion-body
                     .accordion-content
                       .tasks__container
-                        = render partial: 'key_results', collection: goal.objectives.first.key_results, as: :key
+                        = render partial: 'key_results', collection: goal.objective.key_results, as: :key
                       = link_to('Add key result', '#', class: 'reddish')
 
               .linear__separator

@@ -20,18 +20,18 @@ class GoalsController < ApplicationController
     @mentors = User.mentors(current_user.email)
     @milestones = Milestone.all
     @goal = Goal.new
-    @goal.objectives.build
+    objective = @goal.build_objective
+    objective.key_results.build
   end
 
   def create
     @goal = Goal.new(goal_params)
 
     if @goal.save
-      save_key_result
       flash[:success] = 'Tu meta ha sido creada exitosamente'
       redirect_to goals_path
     else
-      flash[:error] = @goal.errors
+      flash[:error] = @goal.errors.messages.keys.join(', ') + " can't be blank"
       redirect_to new_goal_path
     end
   end
@@ -40,7 +40,7 @@ class GoalsController < ApplicationController
     if @goal.update(goal_params)
       flash[:success] = 'Tu meta ha sido actualizada exitosamente'
     else
-      flash[:error] = @goal.errors
+      flash[:error] = @goal.errors.messages.keys.join(', ') + " can't be blank"
     end
 
     redirect_to goals_path
@@ -51,14 +51,9 @@ class GoalsController < ApplicationController
   def goal_params
     params.require(:goal).permit(
       :start_time, :end_time, :mentor_id, :milestone_id, :user_id,
-      objectives_attributes: [:description]
-    )
-  end
-
-  def save_key_result
-    KeyResult.create(
-      description: params[:goal][:key_results][:description],
-      objective: @goal.objectives.first
+      objective_attributes: [:description,
+        key_results_attributes: [:description]
+      ]
     )
   end
 

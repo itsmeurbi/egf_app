@@ -1,43 +1,44 @@
-.title Comenzar trayecto
-.subtitle
-  .subtitle__image
-    =image_tag 'time-icon.svg'
-  .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Periodo
-.text Te recomendamons periodos de 6 meses en cada ciclo
-.timeframe
-  .select
-    = f.date_field(:start_time)
-  %p to
-  .select
-    = f.date_field(:end_time)
-.linear__separator
+.step-content.is-active
+  .title Comenzar trayecto
+  .subtitle
+    .subtitle__image
+      =image_tag 'time-icon.svg'
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Periodo
+  .text Te recomendamos periodos de 6 meses en cada ciclo
+  .timeframe
+    .select
+      = f.date_field(:start_time)
+    %p to
+    .select
+      = f.date_field(:end_time)
+  .linear__separator
 
-.goal__container.not__margin--bottom
-  .subtitle
-    .subtitle__image
-      =image_tag 'circle-icon.svg'
-    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Trayecto
-  .select__container
-    %b Selecciona la categoria
-    .select
-      = select_tag(:category_id, options_for_select(categories_data, category_id))
-    = link_to('See details', '#', class: 'reddish text--small')
-  .select__container
-    %b Selecciona el track
-    .select
-      = select_tag(:track_id, options_for_select(track_data, track_id))
-    .linear__separator
-  .select__container
-    %b Selecciona el milestone
-    .select
-      = f.select(:milestone_id, options_for_select(milestone_data, @goal&.milestone_id))
-    .linear__separator
-  .subtitle
-    .subtitle__image
-      =image_tag 'advisors-icon.svg'
-    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Mentors:
-  .select__container
-    %b Select your mentor
-    .select
-      = f.select(:mentor_id, options_for_select(@mentors.collect{ |mentor| [mentor.first_name, mentor.id] }, @goal&.mentor_id))
-    .linear__separator
+  .goal__container.not__margin--bottom
+    .subtitle
+      .subtitle__image
+        =image_tag 'circle-icon.svg'
+      .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Trayecto
+    .select__container
+      %b Selecciona la categoria
+      .select
+        = select_tag(:category_id, options_for_select(categories_data, category_id))
+      = link_to('See details', '#', class: 'reddish text--small')
+    .select__container
+      %b Selecciona el track
+      .select
+        = select_tag(:track_id, options_for_select(track_data, track_id))
+      .linear__separator
+    .select__container
+      %b Selecciona el milestone
+      .select
+        = f.select(:milestone_id, options_for_select(milestone_data, @goal&.milestone_id))
+      .linear__separator
+    .subtitle
+      .subtitle__image
+        =image_tag 'advisors-icon.svg'
+      .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Mentors:
+    .select__container
+      %b Select your mentor
+      .select
+        = f.select(:mentor_id, options_for_select(@mentors.collect{ |mentor| [mentor.first_name, mentor.id] }, @goal&.mentor_id))
+      .linear__separator
