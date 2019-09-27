@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_002445) do
+ActiveRecord::Schema.define(version: 2019_09_27_183842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,15 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
   end
 
   create_table "goal_resources", force: :cascade do |t|
     t.bigint "goal_id"
     t.bigint "resource_id"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["goal_id"], name: "index_goal_resources_on_goal_id"
     t.index ["resource_id"], name: "index_goal_resources_on_resource_id"
   end
@@ -33,6 +37,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
     t.integer "mentor_id"
     t.bigint "user_id"
     t.bigint "milestone_id"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["milestone_id"], name: "index_goals_on_milestone_id"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
@@ -41,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
     t.string "description"
     t.bigint "objective_id"
     t.boolean "completed", default: false
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["objective_id"], name: "index_key_results_on_objective_id"
   end
 
@@ -48,12 +56,16 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
     t.string "level"
     t.string "description"
     t.bigint "track_id"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["track_id"], name: "index_milestones_on_track_id"
   end
 
   create_table "objectives", force: :cascade do |t|
     t.string "description"
     t.bigint "goal_id"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["goal_id"], name: "index_objectives_on_goal_id"
   end
 
@@ -61,12 +73,16 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
     t.string "name"
     t.string "description"
     t.string "url"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
   end
 
   create_table "tracks", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.bigint "category_id"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
     t.index ["category_id"], name: "index_tracks_on_category_id"
   end
 
@@ -77,6 +93,8 @@ ActiveRecord::Schema.define(version: 2019_09_26_002445) do
     t.string "google_token"
     t.string "google_refresh_token"
     t.string "image_url"
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
   end
 
   add_foreign_key "goal_resources", "goals"
