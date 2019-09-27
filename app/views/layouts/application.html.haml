@@ -11,8 +11,9 @@
   %body
     = render partial: 'layouts/header'
     .body__container.columns
-      = flash_messages
-      = yield
+      .main__container.column
+        = flash_messages
+        = yield
 
 :javascript
   $(document).ready( function() {

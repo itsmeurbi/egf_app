@@ -10,8 +10,13 @@
           =image_tag(navbar_icon("categories"), class: "navbar__item__image")
         = link_to(new_goal_path) do
           =image_tag(navbar_icon("goals"), class: "navbar__item__image")
+        = link_to(signout_path, method: :delete) do
+          =image_tag(navbar_icon("logout"), class: "navbar__item__image")
         .line
           |
-        .profile
+        .profile.mobile
           = link_to(achievements_path) do
+            =image_tag(current_user.image_url, class: "navbar__item__image")
+        .profile.desktop
+          = link_to(category_path("building")) do
             =image_tag(current_user.image_url, class: "navbar__item__image")

@@ -15,10 +15,18 @@
   .my-path {
     border-radius: 4px 0 0 4px;
     font-weight: 800;
+
+    @include desktop {
+      height: 37px;
+    }
   }
 
   .michelada-path {
     border-radius: 0 4px 4px 0;
+
+    @include desktop {
+      height: 37px;
+    }
   }
 }
 
@@ -27,6 +35,16 @@
     .advisors {
       border-radius: 10px;
       background-color: $concrete;
+      width: 175px;
+      height: 35px;
+      margin-top: 1%;
+
+      @include mobile {
+        width: 37%;
+        height: 35px;
+        margin-top: 1%;
+        width: 75%;
+      }
     }
   }
 
@@ -48,4 +66,19 @@
 
 .performance--review {
   margin-top: 3%;
+}
+
+.achievements__container {
+  @include desktop {
+    padding-top: 5%;
+    background-color: $alabaster;
+
+    .title {
+      margin-bottom: 4%;
+    }
+  }
+}
+
+.graph__image {
+  margin-top: 2%;
 }

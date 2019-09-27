@@ -14,6 +14,10 @@
     color: $reddish-pink;
     text-decoration: none;
   }
+
+  @include desktop {
+    margin-left: 1%;
+  }
 }
 
 .main__container {

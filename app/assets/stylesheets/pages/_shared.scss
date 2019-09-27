@@ -2,6 +2,10 @@
   height: 1px;
   background: $alto;
   margin: 5% 4%;
+
+  @include desktop {
+    margin: 2% 0%;
+  }
 }
 
 .text--small {
@@ -51,6 +55,10 @@
 .main__container {
   .title {
     margin: 10% 0 5%;
+
+    @include desktop {
+      margin: 2% 0;
+    }
   }
 
   .timeframe {
@@ -58,6 +66,12 @@
     justify-content: space-between;
     margin: 2% 0;
     align-items: center;
+
+    .select {
+      @include mobile {
+        width: 138px;
+      }
+    }
   }
 }
 
@@ -79,6 +93,10 @@
   flex-direction: row;
   color: $black;
   margin: 5% 0 1% !important;
+
+  @include desktop {
+    margin: 0 0 1% !important;
+  }
 }
 
 .subtitle__text {
@@ -98,10 +116,58 @@
 
 .subtitle__text__with_icon {
   margin: 3% 2% 3% 0;
+
+  @include desktop {
+    margin: 2% 2% 0 0;
+  }
 }
 
 .subtitle__image {
   height: 16px;
   margin: 3% 2% 3% 0;
   width: 16px;
+
+  @include desktop {
+    margin: 2% 1% 0 0;
+  }
+}
+
+.desktop {
+  @include desktop {
+    display: block;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobile {
+  @include desktop {
+    display: none;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.title--category {
+  font-size: 34px;
+  font-weight: 800;
+
+  @include desktop {
+    margin: 2% 0 1%;
+  }
+
+  @include mobile {
+    margin: 10% 0 5%;
+  }
+}
+
+.desktop--container {
+  @include desktop {
+    max-width: 33%;
+    margin: auto;
+  }
 }

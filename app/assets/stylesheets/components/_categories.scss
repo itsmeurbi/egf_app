@@ -1,0 +1,40 @@
+.categories__container {
+  &.desktop {
+    width: 100%;
+    display: inline-block;
+    margin-top: 3%;
+
+    .categories {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      float: right;
+      right: 0;
+      width: 50%;
+      border-bottom: solid 2px $alto;
+    }
+
+    .category {
+      display: flex;
+      color: $reddish-pink;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.section--category {
+  @include desktop {
+    padding: 0 4% 0 0;
+    display: inline-block;
+  }
+}
+
+.building__layout {
+  @include desktop {
+    display: flex;
+    padding: 0 0 0 4% !important;
+  }
+}

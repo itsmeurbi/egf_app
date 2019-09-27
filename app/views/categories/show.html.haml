@@ -1,18 +1,24 @@
-.main__container.column
-  .title
-    = @category.name.titleize
-  .tabs__container
-    .tabs.is-centered.is-toggle.is-small
-      %ul
-        - @category.tracks.each_with_index do |track, index|
-          %li.tabs__element{ class: ("is-active" if index.eql?(0)) }
-            %a.tabs__element__link
-              = track.name.titleize
+.building__layout
+  .column.is-three-quarters.section--category
+    .categories__container.desktop
+      .categories
+        = render partial: 'categories'
 
-    %div
-      - @category.tracks.each do |track|
-        = render partial: "tracks", locals: { track: track }
+    .title--category
+      = @category.name.titleize
+    .tabs__container
+      .tabs.is-centered.is-toggle.is-small
+        %ul
+          - @category.tracks.each_with_index do |track, index|
+            %li.tabs__element{ class: ("is-active" if index.eql?(0)) }
+              %a.tabs__element__link
+                = track.name.titleize
 
+      %div
+        - @category.tracks.each do |track|
+          = render partial: "tracks", locals: { track: track }
+  .is-one-quarter.achievements__container.desktop
+    = render template: "achievements/index"
 = render partial: "layouts/footer"
 
 :javascript
