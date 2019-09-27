@@ -7,5 +7,5 @@ class Goal < ApplicationRecord
   belongs_to :user
   accepts_nested_attributes_for :objective
 
-  validates_presence_of  :start_time, :end_time, :mentor_id, :user_id, :milestone_id
+  validates_presence_of :start_time, :end_time, :mentor_id, :user_id, :milestone_id
 end

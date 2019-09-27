@@ -1,7 +1,7 @@
 module WizardHelper
   def track_data
     @tracks.collect do |track|
-      [track.name, track.id, { 'data-category-id' => track.category_id, selected: @goal&.milestone&.track_id }]
+      [track.name, track.id, { 'data-category-id' => track.category_id }]
     end
   end
 

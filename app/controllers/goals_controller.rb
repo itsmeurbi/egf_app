@@ -51,9 +51,7 @@ class GoalsController < ApplicationController
   def goal_params
     params.require(:goal).permit(
       :start_time, :end_time, :mentor_id, :milestone_id, :user_id,
-      objective_attributes: [:description,
-        key_results_attributes: [:description]
-      ]
+      objective_attributes: [:description, key_results_attributes: [:description]]
     )
   end
 

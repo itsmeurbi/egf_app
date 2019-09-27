@@ -11,7 +11,7 @@
     %p to
     .select
       = f.date_field(:end_time)
-  .linear__separator
+  .linear__separator.extended
 
   .goal__container.not__margin--bottom
     .subtitle
@@ -27,12 +27,12 @@
       %b Selecciona el track
       .select
         = select_tag(:track_id, options_for_select(track_data, track_id))
-      .linear__separator
+      .linear__separator.extended
     .select__container
       %b Selecciona el milestone
       .select
         = f.select(:milestone_id, options_for_select(milestone_data, @goal&.milestone_id))
-      .linear__separator
+      .linear__separator.extended
     .subtitle
       .subtitle__image
         =image_tag 'advisors-icon.svg'
@@ -41,4 +41,4 @@
       %b Select your mentor
       .select
         = f.select(:mentor_id, options_for_select(@mentors.collect{ |mentor| [mentor.first_name, mentor.id] }, @goal&.mentor_id))
-      .linear__separator
+      .linear__separator.extended

@@ -1,6 +1,5 @@
 .main__container.column
   .title Mi meta
-  .linear__separator
   %section.goal__container.accordions
     - @goals.each_with_index do |goal, index|
       %article.accordion
@@ -27,8 +26,8 @@
                 Periodo
             .timeframe
               %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
-            = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
           %button.toggle
+          = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
         .accordion-body
           .accordion-content
             .subtitle
@@ -64,7 +63,6 @@
                         = render partial: 'key_results', collection: goal.objective.key_results, as: :key
                       = link_to('Add key result', '#', class: 'reddish')
 
-              .linear__separator
               .advisors__container
                 .subtitle.subtitle--advisors
                   .subtitle__image
