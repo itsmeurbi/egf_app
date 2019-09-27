@@ -65,7 +65,7 @@
 .hero-image {
   figure {
     .image {
-      background-image: asset_path('hero-image-desk.jpg');
+      background-image: image-url('hero-image-desk.jpg');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       height: 40vh;
@@ -75,7 +75,7 @@
       }
 
       @include mobile {
-        background-image: asset_path('hero-image-mobile@3x.png');
+        background-image: image-url('hero-image-mobile@3x.png');
         height: 361px;
       }
     }
