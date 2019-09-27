@@ -5,8 +5,10 @@ class SessionsController < ApplicationController
     access_token = request.env["omniauth.auth"]
     user = User.create_from_omniauth(access_token)
     validate_token(user, access_token)
-    redirect_to goals_path
     user.save
+    session[:user_id] = user.id
+
+    redirect_to goals_path
   end
 
   def destroy
