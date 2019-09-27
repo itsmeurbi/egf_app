@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/egf
     shell: /bin/bash --login
     docker:
-      - image: circleci/ruby:2.6.3
+      - image: circleci/ruby:2.6.3-node
         environment:
           RAILS_ENV: test
           PGHOST: localhost
@@ -46,5 +46,6 @@ jobs:
       - run: bundle exec brakeman --exit-on-warn .
       # Setup the database
       - run: bundle exec rake db:setup
+      - run: yarn install
       # Run the tests
       - run: bin/rails test
