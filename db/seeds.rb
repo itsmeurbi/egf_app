@@ -127,26 +127,27 @@ Milestone.create(level: 3, track: community, description: 'Contributes to improv
 Milestone.create(level: 4, track: community, description: 'Exemplifies selflessness for the team without compromising responsibilities, and lifts everyone up')
 Milestone.create(level: 5, track: community, description: 'Lives the company values, guards positive culture, and defines policies that support relatedness between teams')
 
-# goal
-goal = Goal.create(start_time: '2019-10-01', end_time: '2019-11-01', mentor: chuy, user: karen, milestone: milestone)
-
-# objective
-objective = Objective.create(description: 'Build my first mobile application', goal: goal)
-
-# key results
-key_result_1 = KeyResult.create(description: 'Added existing button to a different iOS surface', objective: objective)
-key_result_2 = KeyResult.create(description: 'Add follow button for publications on Android', objective: objective)
-key_result_3 = KeyResult.create(description: 'Fetched and displayed a new stream, using existing stream item styles', objective: objective)
-
-# resources
 resource_1 = Resource.create(name: 'Mobile app', description: 'Create your first Mobile app', url: 'www.google.com')
 resource_2 = Resource.create(name: 'Web app', description: 'Create your first Web app', url: 'www.google.com')
 resource_3 = Resource.create(name: 'DevOps', description: 'Learn what is Devops', url: 'www.google.com')
 resource_4 = Resource.create(name: 'TDD', description: 'Learn what is TDD', url: 'www.google.com')
 resource_5 = Resource.create(name: 'BDD', description: 'Learn what is BDD', url: 'www.google.com')
 
-GoalResources.create(goal_id: goal.id, resource_id: resource_1.id)
-GoalResources.create(goal_id: goal.id, resource_id: resource_2.id)
-GoalResources.create(goal_id: goal.id, resource_id: resource_3.id)
-GoalResources.create(goal_id: goal.id, resource_id: resource_4.id)
-GoalResources.create(goal_id: goal.id, resource_id: resource_5.id)
+# # goal
+# goal = Goal.create(start_time: '2019-10-01', end_time: '2019-11-01', mentor: chuy, user: karen, milestone: milestone)
+
+# # objective
+# objective = Objective.create(description: 'Build my first mobile application', goal: goal)
+
+# # key results
+# key_result_1 = KeyResult.create(description: 'Added existing button to a different iOS surface', objective: objective)
+# key_result_2 = KeyResult.create(description: 'Add follow button for publications on Android', objective: objective)
+# key_result_3 = KeyResult.create(description: 'Fetched and displayed a new stream, using existing stream item styles', objective: objective)
+
+# resources
+
+# GoalResources.create(goal_id: goal.id, resource_id: resource_1.id)
+# GoalResources.create(goal_id: goal.id, resource_id: resource_2.id)
+# GoalResources.create(goal_id: goal.id, resource_id: resource_3.id)
+# GoalResources.create(goal_id: goal.id, resource_id: resource_4.id)
+# GoalResources.create(goal_id: goal.id, resource_id: resource_5.id)

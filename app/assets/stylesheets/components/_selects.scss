@@ -1,9 +1,12 @@
 select {
-  width: 342px;
-  height: 40px;
   border-radius: 10px;
   border: solid 1px $alto;
   color: $alto;
+
+  @include mobile {
+    width: 342px;
+    height: 40px;
+  }
 }
 
 .select:not(.is-multiple):not(.is-loading)::after{

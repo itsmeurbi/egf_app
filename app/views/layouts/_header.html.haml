@@ -4,6 +4,8 @@
       =link_to(image_tag('michelada_icon.svg'), root_path)
       .app__name
         EGF
+        -# %i.fas.fa-sign-out-alt
+        = link_to('Salir', signout_path, method: :delete)
     - if current_user
       .navbar__items.column
         = link_to(category_path("building")) do
