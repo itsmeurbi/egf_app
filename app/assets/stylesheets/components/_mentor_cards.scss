@@ -56,3 +56,9 @@
     display: none; // Safari and Chrome
   }
 }
+
+.column.is-one-third, .column.is-one-third-tablet {
+  @include desktop {
+    width: 7%;
+  }
+}

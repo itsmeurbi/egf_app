@@ -22,6 +22,13 @@
 
   display: flex;
   flex-wrap: wrap;
+
+  @include desktop {
+    width: 20%;
+    position: absolute;
+    right: 29%;
+    top: 28%;
+  }
 }
 
 .steps__item {
@@ -93,4 +100,28 @@
   &.is-active {
     display: block;
   }
+}
+
+.steps__container {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+
+  &.desktop {
+    @include desktop {
+      display: block;
+    }
+
+    @include mobile {
+       display: none;
+    }
+  }
+}
+
+.subtitle--levels {
+  position: absolute;
+  right: 45%;
+  top: 24%;
 }

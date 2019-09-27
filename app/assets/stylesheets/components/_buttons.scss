@@ -3,7 +3,6 @@
   border-radius: 10px;
   font-weight: 600;
   color: $alto;
-  height: 100%;
 }
 
 .button {
@@ -86,5 +85,11 @@
 
   &.button__filled--reddish{
     color: $white;
+  }
+}
+
+.button--category {
+  @include desktop {
+    float: left;
   }
 }

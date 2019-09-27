@@ -1,32 +1,31 @@
-.main__container.column
-  .title Trayectoria profesional
-  .paths__container
-    .path__container.background--reddish.my-path
-      =link_to('Mis logos', '#', class: 'text--white')
-    .path__container.button__border--reddish.michelada-path
-      =link_to("Logros de michelada", '#', class: 'reddish')
-  .subtitle__text.subtitle__text--medium
-    %b Mi desempeño
-  .text.performance--review Tu perfil se enfoca mayormente en DevOps
-  .linear__separator
-  .container.career-path
-    .advisors__container
-      .subtitle
-        .subtitle__image
-          =image_tag 'advisors-icon.svg'
-        .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-          Mis mentores:
-      .mentors-by-level__container
-        - @goals.each do |goal|
-          .breadcrumb__path
-            %nav.breadcrumb
-              %ul
-                %li
-                  =link_to(category_name(goal), '')
-                %li
-                  =link_to(track_name(goal), '')
-                %li
-                  =link_to("level #{level(goal)}", '', class: 'is-active')
-          .advisors
-            =image_tag(goal.mentor.image_url)
-            %p= goal.mentor.name
+.title Trayectoria profesional
+.paths__container
+  .path__container.background--reddish.my-path
+    =link_to('Mis logos', '#', class: 'text--white')
+  .path__container.button__border--reddish.michelada-path
+    =link_to("Logros de michelada", '#', class: 'reddish')
+.subtitle__text.subtitle__text--medium
+  %b Mi desempeño
+.text.performance--review Tu perfil se enfoca mayormente en DevOps
+.linear__separator
+.container.career-path
+  .advisors__container
+    .subtitle
+      .subtitle__image
+        =image_tag 'advisors-icon.svg'
+      .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+        Mis mentores:
+    .mentors-by-level__container
+      - @goals.each do |goal|
+        .breadcrumb__path
+          %nav.breadcrumb
+            %ul
+              %li
+                =link_to(category_name(goal), '')
+              %li
+                =link_to(track_name(goal), '')
+              %li
+                =link_to("level #{level(goal)}", '', class: 'is-active')
+        .advisors
+          =image_tag(goal.mentor.image_url)
+          %p= goal.mentor.name

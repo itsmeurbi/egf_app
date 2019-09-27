@@ -3,6 +3,10 @@
   font-weight: bold;
 
   .tabs__element {
+      @include desktop {
+        width: 25%;
+      }
+
     .tabs__element__link {
       border: solid 1px $reddish-pink;
       color: $reddish-pink;
