@@ -1,0 +1,15 @@
+building:
+  name: building
+  description: description
+
+executing:
+  name: executing
+  description: description
+
+supporting:
+  name: supporting
+  description: description
+
+strengthening:
+  name: strengthening
+  description: description

@@ -1,0 +1,11 @@
+karen:
+  first_name: Karen
+  last_name: Ventura
+  email: karen@michelada.io
+  image_url: "https://www.images.com/karen"
+
+jesus:
+  first_name: Jesus
+  last_name: Figueroa
+  email: jesus@michelada.io
+  image_url: "https://www.images.com/jesus"

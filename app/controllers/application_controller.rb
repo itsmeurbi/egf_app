@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user
 
   def current_user
-    return false if session[:user_id].nil?
+    return if session[:user_id].nil?
 
     User.find(session[:user_id])
   end
