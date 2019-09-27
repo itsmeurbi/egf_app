@@ -66,6 +66,12 @@
     justify-content: space-between;
     margin: 2% 0;
     align-items: center;
+
+    .select {
+      @include mobile {
+        width: 138px;
+      }
+    }
   }
 }
 
@@ -156,5 +162,12 @@
 
   @include mobile {
     margin: 10% 0 5%;
+  }
+}
+
+.desktop--container {
+  @include desktop {
+    max-width: 33%;
+    margin: auto;
   }
 }

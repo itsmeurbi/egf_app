@@ -29,6 +29,10 @@
     right: 29%;
     top: 28%;
   }
+
+  @include tablet {
+    top: 32%;
+  }
 }
 
 .steps__item {
@@ -124,4 +128,9 @@
   position: absolute;
   right: 45%;
   top: 24%;
+
+  @include tablet {
+    right: 44%;
+    top: 28%;
+  }
 }

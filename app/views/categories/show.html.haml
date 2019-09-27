@@ -17,7 +17,7 @@
       %div
         - @category.tracks.each do |track|
           = render partial: "tracks", locals: { track: track }
-  .column.is-one-quarter.achievements__container.desktop
+  .is-one-quarter.achievements__container.desktop
     = render template: "achievements/index"
 = render partial: "layouts/footer"
 

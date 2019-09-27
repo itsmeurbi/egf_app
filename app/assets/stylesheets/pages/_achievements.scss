@@ -8,7 +8,7 @@
     height: 29px;
 
     a {
-      vertical-align: sub;
+      vertical-align: -webkit-baseline-middle;
     }
   }
 
@@ -43,6 +43,7 @@
         width: 37%;
         height: 35px;
         margin-top: 1%;
+        width: 75%;
       }
     }
   }
@@ -68,15 +69,20 @@
 }
 
 .achievements__container {
-  @include widescreen-only {
-    margin-top: 3%;
-  }
-
-  @include fullhd {
-    margin-top: 5%;
+  @include widescreen {
+    padding-top: 5%;
+    background-color: $alabaster;
 
     .title {
       margin-bottom: 4%;
     }
   }
+
+  @include tablet {
+    padding-top: 3%;
+  }
+}
+
+.graph__image {
+  margin-top: 2%;
 }

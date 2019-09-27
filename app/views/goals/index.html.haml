@@ -1,78 +1,79 @@
-.title Mi meta
-%section.goal__container.accordions
-  - @goals.each_with_index do |goal, index|
-    %article.accordion
-      .accordion-header
-        .path__container
-          .subtitle
-            .subtitle__image
-              =image_tag 'circle-icon.svg'
-            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-              ="Trayecto #{index + 1}"
-          .breadcrumb__path
-            %nav.breadcrumb
-              %ul
-                %li
-                  =link_to(category_name(goal), '')
-                %li
-                  =link_to(track_name(goal), '')
-                %li
-                  =link_to("level #{level(goal)}", '', class: 'is-active')
-          .subtitle
-            .subtitle__image
-              =image_tag 'time-icon.svg'
-            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-              Periodo
-          .timeframe
-            %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
-        %button.toggle
-        = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
-      .accordion-body
-        .accordion-content
-          .subtitle
-            .subtitle__image
-              =image_tag 'flag-icon.svg'
-            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-              La meta principal en este nivel
-          .text= goal.milestone.description
-          .subtitle
-            .subtitle__image
-              =image_tag 'resources-icon.svg'
-            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-              Recursos útiles
-            %ul.resources__list
-              - goal.resources.each do |resource|
-                %li.reddish
-                  =link_to(resource.name, resource.url, target: '_blank')
-          .subtitle
-            .subtitle__image
-              =image_tag 'tasks-icon.svg'
-            .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-              Objetivo
-          .container.acordion--objectives
-            .objective= goal.objective.description
-            %section.accordions
-              %article.accordion--objective
-                .accordion-header
-                  %b Key results
-                  %button.toogle
-                .accordion-body
-                  .accordion-content
-                    .tasks__container
-                      = render partial: 'key_results', collection: goal.objective.key_results, as: :key
-                    = link_to('Add key result', '#', class: 'reddish')
+.column.desktop--container
+  .title Mi meta
+  %section.goal__container.accordions
+    - @goals.each_with_index do |goal, index|
+      %article.accordion
+        .accordion-header
+          .path__container
+            .subtitle
+              .subtitle__image
+                =image_tag 'circle-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                ="Trayecto #{index + 1}"
+            .breadcrumb__path
+              %nav.breadcrumb
+                %ul
+                  %li
+                    =link_to(category_name(goal), '')
+                  %li
+                    =link_to(track_name(goal), '')
+                  %li
+                    =link_to("level #{level(goal)}", '', class: 'is-active')
+            .subtitle
+              .subtitle__image
+                =image_tag 'time-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Periodo
+            .timeframe
+              %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
+          %button.toggle
+          = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
+        .accordion-body
+          .accordion-content
+            .subtitle
+              .subtitle__image
+                =image_tag 'flag-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                La meta principal en este nivel
+            .text= goal.milestone.description
+            .subtitle
+              .subtitle__image
+                =image_tag 'resources-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Recursos útiles
+              %ul.resources__list
+                - goal.resources.each do |resource|
+                  %li.reddish
+                    =link_to(resource.name, resource.url, target: '_blank')
+            .subtitle
+              .subtitle__image
+                =image_tag 'tasks-icon.svg'
+              .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                Objetivo
+            .container.acordion--objectives
+              .objective= goal.objective.description
+              %section.accordions
+                %article.accordion--objective
+                  .accordion-header
+                    %b Key results
+                    %button.toogle
+                  .accordion-body
+                    .accordion-content
+                      .tasks__container
+                        = render partial: 'key_results', collection: goal.objective.key_results, as: :key
+                      = link_to('Add key result', '#', class: 'reddish')
 
-            .advisors__container
-              .subtitle.subtitle--advisors
-                .subtitle__image
-                  =image_tag 'advisors-icon.svg'
-                .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                  Asesores recomendados:
-              .advisors
-                =image_tag('karen.png')
-                %p Karen Ventura
-    .linear__separator
-= link_to('Agregar nuevo trayecto', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
+              .advisors__container
+                .subtitle.subtitle--advisors
+                  .subtitle__image
+                    =image_tag 'advisors-icon.svg'
+                  .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+                    Asesores recomendados:
+                .advisors
+                  =image_tag('karen.png')
+                  %p Karen Ventura
+      .linear__separator
+  = link_to('Agregar nuevo trayecto', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
 
 :javascript
   $(document).ready( function() {
