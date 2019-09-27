@@ -2,6 +2,10 @@
 .steps {
   display: inherit;
   min-height: 100vh;
+
+  .extended {
+    margin: 5% 0;
+  }
 }
 
 .steps .step-item::before {

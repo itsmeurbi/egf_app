@@ -1,24 +1,22 @@
-= f.fields_for :key_results do |key_form|
+.step-content
   .title Crear key result
   .subtitle
     .subtitle__image
       =image_tag 'tasks-icon.svg'
     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Key results
   .text Te recomendamos tener al menos 2 tareas por periodo
+  = objective_form.fields_for :key_results do |key_form|
+    .container
+      .create__task
+        %b Key result
+        = text_area_tag('key-result', '', class: 'textarea textarea--white textarea-key-result', size: '10x2')
+      %input{ type: 'button', value: 'Add key result', class: 'button button--small button__color--reddish button__border--reddish button--right add-key-result'}
   .container
-    .create__task
-      %b Key result
-      = key_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')
-    = link_to('Add key result', '', class: 'button button--small button__color--reddish button__border--reddish button--right')
+    %b Key results actuales
+    .tasks__container.dynamic__container
+    = hidden_field_tag('key_result_index', '0')
 
-  .container
-    %b Key results actualess
-    .tasks__container
-      .task
-        .circle--not-check
-          .circle
-        %p Built series reader on Android
-      .task
-        .circle--not-check
-          .circle
-        %p Informed the team about recent best practice changes and deprecations
+:javascript
+  $(document).ready( function() {
+    new Egf.KeyResults().dynamicForm();
+  });

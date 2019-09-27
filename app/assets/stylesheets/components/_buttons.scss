@@ -57,6 +57,9 @@
 }
 
 .button--edit {
+  position: absolute;
+  bottom: 8%;
+  right: 10px;
   margin-top: 2%;
 }
 
@@ -71,7 +74,6 @@
 
 .button:focus:not(:active), .button.is-focused:not(:active) {
   box-shadow: none;
-  color: $white;
 
   &.button--prev {
     color: $reddish-pink;
@@ -81,4 +83,8 @@
 .button:focus, .button.is-focused {
   border-color: $reddish-pink;
   color: $reddish-pink;
+
+  &.button__filled--reddish{
+    color: $white;
+  }
 }
