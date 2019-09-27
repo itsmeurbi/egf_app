@@ -8,7 +8,7 @@
     height: 29px;
 
     a {
-      vertical-align: sub;
+      vertical-align: -webkit-baseline-middle;
     }
   }
 
@@ -69,13 +69,17 @@
 }
 
 .achievements__container {
-  @include desktop {
+  @include widescreen {
     padding-top: 5%;
     background-color: $alabaster;
 
     .title {
       margin-bottom: 4%;
     }
+  }
+
+  @include tablet {
+    padding-top: 3%;
   }
 }
 
