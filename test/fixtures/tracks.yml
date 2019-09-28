@@ -1,8 +1,8 @@
-mobile: 
-  name: mobile 
+mobile:
+  name: mobile
   category: building
   description: Develops expertise in native mobile platform engineering such as iOS or Android
-  
+
 web_client:
   name: web client
   category: building
@@ -12,7 +12,7 @@ foundations:
   category: building
   description: Develops expertise in foundational systems such as deployments pipelines databases and machine learning
 servers:
-  name: servers 
+  name: servers
   category: building
   description: Develops expertise in server side engineering using technologies such as Go NodeJS or Scala
 
@@ -32,41 +32,41 @@ initiative:
   name: initiative
   category: executing
   description: Challenges the status quo and effects positive organizational change outside of mandated work
-    
+
 career_development:
-  name: career development 
+  name: career development
   category: supporting
   description: Provides strategic support to engineers to help them build the career they want
-  
+
 org_design:
   name: org design
   category: supporting
   description: Defines processes and structures that enables the strong growth and execution of a diverse eng organization
-  
-wellbeing: 
-  name: wellbeing 
+
+wellbeing:
+  name: wellbeing
   category: supporting
   description: Supports the emotional well-being of group members in difficult times and celebrates their successes
-  
-accomplishment: 
-  name: accomplishment 
+
+accomplishment:
+  name: accomplishment
   category: supporting
   description: Inspires day to day excellence maximises potential and effectively resolves performance issues with compassion
 
-mentorship: 
-  name: mentorship 
+mentorship:
+  name: mentorship
   category: strengthening
   description: Provides support to colleagues spreads knowledge and develops the team outside formal reporting structures
-  
-evangelism: 
+
+evangelism:
   name: evangelism
-  category: strengthening 
+  category: strengthening
   description: Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work
-recruiting: 
+recruiting:
   name: recruiting
   category: strengthening
   description: Strengthens Mediums team by bringing in excellent staff members
-community: 
+community:
   name: community
   category: strengthening
   description: Builds community internally gives of themself to the team and champions and extols company values
