@@ -30,7 +30,9 @@ Egf.KeyResults.prototype = {
                                            <div class='circle--not-check'> \
                                              <div class="circle"></div> \
                                            </div> \
-                                           <input id='${id}' name='${name}' value='${keyResult.value}'> \
+                                           <p>${keyResult.value}</p> \
+                                           <div class='delete key__result--delete'></div> \
+                                           <input type="hidden" id='${id}' name='${name}' value='${keyResult.value}'></input>
                                          </div>`);
         index.value = parseInt(index.value) + 1;
         keyResult.value = ''
