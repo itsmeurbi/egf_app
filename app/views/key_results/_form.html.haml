@@ -1,0 +1,18 @@
+.column.desktop--container
+  = form_for @key_result do |f|
+    .step-content
+      .title Crear key result
+      .subtitle
+        .subtitle__image
+          =image_tag 'tasks-icon.svg'
+        .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Key results
+      .text Te recomendamos tener al menos 2 key results por periodo
+      .container
+        .create__task
+          %b Key result
+          = f.text_area(:description, class: 'textarea textarea--white textarea-key-result', size: '10x2')
+      .container
+        %b Key results actuales
+        .tasks__container.dynamic__container
+      = f.hidden_field :objective_id
+      = f.submit('Crear', class: 'button button__color--reddish button__border--reddish button--large')

@@ -61,7 +61,7 @@
                     .accordion-content
                       .tasks__container
                         = render partial: 'key_results', collection: goal.objective.key_results, as: :key
-                      = link_to('Add key result', '#', class: 'reddish')
+                      = link_to('Add key result', new_key_result_path(goal_id: goal.id), class: 'reddish')
 
               .advisors__container
                 .subtitle.subtitle--advisors

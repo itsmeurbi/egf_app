@@ -15,7 +15,7 @@ module ApplicationHelper
     flash.each do |msg_type, message|
       concat(content_tag(:article, '', class: "message #{class_for(msg_type)}", role: "alert") do
         concat(content_tag(:div, '', class: 'message-header', data: { dismiss: 'alert' }) do
-          concat(content_tag(:p, message))
+          concat(content_tag(:p, message, class: 'message-content'))
           concat(content_tag(:button, '', class: 'delete'))
         end)
       end)

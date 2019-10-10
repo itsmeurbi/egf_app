@@ -13,5 +13,9 @@ Egf.Modal.prototype = {
     $(document).on("click", ".delete", function() {
       $('article.message').hide();
     });
+
+    $(document).on("click", ".key__result--delete", function() {
+      $(this).closest('.task').remove();
+    });
   },
 };
