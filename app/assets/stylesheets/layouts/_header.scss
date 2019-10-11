@@ -59,4 +59,20 @@
 
 .navbar__item__image {
   display: block;
+  margin-right: 4px;
+}
+
+.item {
+  height: 100%;
+  align-items: center;
+  color: $reddish-pink;
+
+  &.active {
+    color: $dark;
+    border-bottom: 0.125em solid $dark;
+  }
+}
+
+.item--concrete {
+  color: $jumbo;
 }

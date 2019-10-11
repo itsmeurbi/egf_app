@@ -7,8 +7,12 @@ module ApplicationHelper
 
   def navbar_icon(section)
     icon = "#{section}-icon"
-    icon = "#{icon}-active" if params[:controller].match(section)
+    icon = "#{icon}-active" if current_section?(section)
     "#{icon}.svg"
+  end
+
+  def current_section?(section)
+    params[:controller].match(section)
   end
 
   def flash_messages
@@ -28,5 +32,9 @@ module ApplicationHelper
       error: "is-danger",
       alert: "is-warning",
       notice: "is-info" }.stringify_keys[flash_type.to_s] || flash_type.to_s
+  end
+
+  def active_class(section)
+    return 'active' if current_section?(section)
   end
 end

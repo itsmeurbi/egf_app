@@ -6,12 +6,15 @@
         EGF
     - if current_user
       .navbar__items.column
-        = link_to(category_path("building")) do
+        = link_to(category_path("building"), class: "flex item #{active_class('categories')}") do
           =image_tag(navbar_icon("categories"), class: "navbar__item__image")
-        = link_to(new_goal_path) do
+          %span.desktop Información
+        = link_to(new_goal_path, class: "flex item #{active_class('goals')}") do
           =image_tag(navbar_icon("goals"), class: "navbar__item__image")
-        = link_to(signout_path, method: :delete) do
+          %span.desktop Mis objetivos
+        = link_to(signout_path, class: "flex item item--concrete", method: :delete) do
           =image_tag(navbar_icon("logout"), class: "navbar__item__image")
+          %span.desktop Cerrar sesión
         .line
           |
         .profile.mobile
