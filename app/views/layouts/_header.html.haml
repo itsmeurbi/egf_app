@@ -17,9 +17,9 @@
           %span.desktop Cerrar sesión
         .line
           |
-        .profile.mobile
+        .mobile.flex.item{ class: "#{active_class('achievements')}" }
           = link_to(achievements_path) do
-            =image_tag(current_user.image_url, class: "navbar__item__image")
-        .profile.desktop
+            =image_tag(current_user.image_url, class: "navbar__item__image profile--image")
+        .desktop
           = link_to(category_path("building")) do
-            =image_tag(current_user.image_url, class: "navbar__item__image")
+            =image_tag(current_user.image_url, class: "navbar__item__image profile--image")
