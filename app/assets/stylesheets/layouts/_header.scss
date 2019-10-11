@@ -12,22 +12,22 @@
       background-color: $concrete;
 
       a {
-        margin-left: 10px;
+        margin-left: 0.625em;
       }
 
       img {
-        width: 36px;
-        height: 36px;
+        width: 2.250em;
+        height: 2.250em;
       }
 
       .app__name {
-        font-size: 18px;
+        font-size: 1.125em;
         font-weight: 600;
         font-style: normal;
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        margin-left: 13px;
+        margin-left: 0.813em;
       }
     }
 
@@ -39,15 +39,13 @@
       justify-content: space-around;
 
       .fa-bullseye {
-        font-size: 22px;
+        font-size: 1.375em;
       }
 
-      .profile {
-        img {
-          width: 36px;
-          height: 36px;
-          border-radius: 50px;
-        }
+      .profile--image {
+        width: 2.250em;
+        height: 2.250em;
+        border-radius: 3.125em;
       }
 
       .line {
@@ -59,7 +57,7 @@
 
 .navbar__item__image {
   display: block;
-  margin-right: 4px;
+  margin-right: 0.250em;
 }
 
 .item {

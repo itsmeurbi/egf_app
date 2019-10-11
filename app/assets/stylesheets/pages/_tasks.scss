@@ -48,7 +48,7 @@
       background-color: $white;
 
       @include mobile {
-        border-radius: 10px;
+        border-radius: 0.625em;
         max-width: 65%;
         height: 35px;
         margin: 4% 0 8%;
@@ -68,7 +68,7 @@
     flex-direction: column;
 
     .textarea {
-      border-radius: 10px;
+      border-radius: 0.625em;
       margin-top: 2%;
       color: $black;
       border: solid 1px $alto;
@@ -82,7 +82,7 @@
 }
 
 .container--no-tasks {
-  height: 110px;
+  height: 10.625em;
   padding: 1% 4%;
   display: flex;
   flex-direction: column;

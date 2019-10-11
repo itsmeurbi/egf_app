@@ -1,5 +1,5 @@
 select {
-  border-radius: 10px;
+  border-radius: 0.625em;
   border: solid 1px $alto;
   color: $alto;
   width: 100%;
@@ -11,20 +11,20 @@ select {
 }
 
 .input, .textarea, .select select {
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 .select__container {
   display: flex;
   flex-direction: column;
-  height: 122px;
+  height: 11.375em;
   justify-content: space-evenly;
 }
 
 input[type="date"]
 {
   border: solid 1px $alto;
-  border-radius: 10px;
+  border-radius: 0.625em;
   color: $reddish-pink;
   text-align: end;
   font-size: 16px;
