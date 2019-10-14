@@ -1,8 +1,12 @@
 module ApplicationHelper
   def category_icon(category)
     icon = "#{category}-icon"
-    icon = "#{icon}-active" if category.eql?(params[:name])
+    icon = "#{icon}-active" if current_category?(category)
     "#{icon}.svg"
+  end
+
+  def current_category?(category)
+    category.eql?(params[:name])
   end
 
   def navbar_icon(section)
@@ -36,5 +40,9 @@ module ApplicationHelper
 
   def active_class(section)
     return 'active' if current_section?(section)
+  end
+
+  def active_category(category)
+    return 'active' if current_category?(category)
   end
 end
