@@ -36,5 +36,7 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore heroku repository
-
 /floating-earth-08890
+
+# Ignore test coverage report
+/coverage
