@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-"use strict";
+'use strict';
 
 window.Egf = window.Egf || {};
 Egf.KeyResults = function() {};
@@ -10,12 +10,12 @@ Egf.KeyResults.prototype = {
   },
 
   dynamicForm: function() {
-    $(document).on("click", ".add-key-result", function(e) {
+    $(document).on('click', '.add-key-result', function(e) {
       e.preventDefault();
       appendElement();
     });
 
-    $(document).on("click", ".button--done", function(e) {
+    $(document).on('click', '.button--done', function(e) {
       appendElement();
     });
 

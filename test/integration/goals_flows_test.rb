@@ -9,15 +9,15 @@ class GoalsFlowsTest < ActionDispatch::IntegrationTest
     @end_time = goal.end_time.strftime('%m/%d/%Y')
   end
 
-  test "can create goals" do
+  test 'can create goals' do
     get new_goal_url
   end
 
-  test "can list my goals" do
+  test 'can list my goals' do
     get goals_url
 
-    assert_select ".title", "Mi meta"
-    assert_select ".subtitle__text.subtitle__text--medium", "Trayecto 1"
-    assert_select ".timeframe", "#{@start_time} to #{@end_time}"
+    assert_select '.title', 'Mi meta'
+    assert_select '.subtitle__text.subtitle__text--medium', 'Trayecto 1'
+    assert_select '.timeframe', "#{@start_time} to #{@end_time}"
   end
 end
