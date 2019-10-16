@@ -8,18 +8,18 @@
       .navbar__items.column
         = link_to(category_path("building"), class: "flex item #{active_class('categories')}") do
           =image_tag(navbar_icon("categories"), class: "navbar__item__image")
-          %span.desktop Información
+          %span.is-hidden-mobile Información
         = link_to(new_goal_path, class: "flex item #{active_class('goals')}") do
           =image_tag(navbar_icon("goals"), class: "navbar__item__image")
-          %span.desktop Mis objetivos
+          %span.is-hidden-mobile Mis objetivos
         = link_to(signout_path, class: "flex item item--concrete", method: :delete) do
           =image_tag(navbar_icon("logout"), class: "navbar__item__image")
-          %span.desktop Cerrar sesión
+          %span.is-hidden-mobile Cerrar sesión
         .line
           |
-        .mobile.flex.item{ class: "#{active_class('achievements')}" }
+        .is-hidden-tablet.flex.item{ class: "#{active_class('achievements')}" }
           = link_to(achievements_path) do
             =image_tag(current_user.image_url, class: "navbar__item__image profile--image")
-        .desktop
+        .is-hidden-mobile
           = link_to(category_path("building")) do
             =image_tag(current_user.image_url, class: "navbar__item__image profile--image")

@@ -5,7 +5,7 @@
         = track.name.titleize
       .text
         = track.description
-    .linear__separator.desktop
+    .linear__separator.is-hidden-mobile
     .steps__container.desktop
       .subtitle.subtitle--levels
         .subtitle__text.subtitle__text--medium
@@ -15,9 +15,9 @@
         - track.milestones.each do |milestone|
           = render partial: 'milestone', locals: { milestone: milestone }
 
-  .linear__separator.mobile
+  .linear__separator.is-hidden-tablet
 
-  .subtitle.mobile
+  .subtitle.is-hidden-tablet
     .subtitle__text.subtitle__text--medium
       Niveles
 

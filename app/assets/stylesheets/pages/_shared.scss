@@ -132,26 +132,6 @@
   }
 }
 
-.desktop {
-  @include desktop {
-    display: block;
-  }
-
-  @include mobile {
-    display: none;
-  }
-}
-
-.mobile {
-  @include desktop {
-    display: none !important;
-  }
-
-  @include mobile {
-    display: block;
-  }
-}
-
 .title--category {
   font-size: 34px;
   font-weight: 800;

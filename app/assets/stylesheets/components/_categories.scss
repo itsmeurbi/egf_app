@@ -1,7 +1,6 @@
 .categories__container {
-  &.desktop {
+  &.is-hidden-mobile {
     width: 100%;
-    display: inline-block;
     margin-top: 3%;
 
     .categories {
