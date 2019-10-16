@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-"use strict";
+'use strict';
 
 window.Egf = window.Egf || {};
 Egf.NestedAccordion = function() {};
@@ -10,7 +10,7 @@ Egf.NestedAccordion.prototype = {
   },
 
   nestedAccordion: function() {
-    $(document).on("click", ".accordion--objective", function() {
+    $(document).on('click', '.accordion--objective', function() {
       $(this).toggleClass('is-active')
     });
   },

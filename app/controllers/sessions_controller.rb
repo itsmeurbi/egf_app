@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user
 
   def google_auth
-    access_token = request.env["omniauth.auth"]
+    access_token = request.env['omniauth.auth']
     user = User.create_from_omniauth(access_token)
     validate_token(user, access_token)
     user.save

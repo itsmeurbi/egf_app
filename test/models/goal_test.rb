@@ -46,6 +46,6 @@ class GoalTest < ActiveSupport::TestCase
   end
 
   test '#user' do
-    assert_equal 'Karen Ventura', @goal.user.size.name
+    assert_equal 'Karen Ventura', @goal.user.name
   end
 end

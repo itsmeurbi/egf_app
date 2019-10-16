@@ -6,10 +6,10 @@ class AchievementsFlowsTest < ActionDispatch::IntegrationTest
     sign_in_user(karen)
   end
 
-  test "can list achievements" do
+  test 'can list achievements' do
     get achievements_url
 
     assert_response :success
-    assert_select ".title", "Trayectoria profesional"
+    assert_select '.title', 'Trayectoria profesional'
   end
 end

@@ -1,3 +1,11 @@
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter('config/')
+  add_filter('app/channels/application_cable/channel.rb')
+  add_filter('app/channels/application_cable/connection.rb')
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
