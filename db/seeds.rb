@@ -1,6 +1,6 @@
 # Users
-karen = User.create(first_name: 'Karen', last_name: 'Ventura', email: 'karen@michelada.io')
-chuy = User.create(first_name: 'Jesus', last_name: 'Figueroa', email: 'jesus@michelada.io')
+karen = User.create(first_name: 'Karen', last_name: 'Ventura', email: 'karen@michelada.io', image_url: 'https://image.flaticon.com/icons/png/512/16/16363.png')
+chuy = User.create(first_name: 'Jesus', last_name: 'Figueroa', email: 'jesus@michelada.io', image_url: 'https://image.flaticon.com/icons/png/512/16/16363.png')
 
 # Categories
 building = Category.create(name: 'building', description: 'description')
