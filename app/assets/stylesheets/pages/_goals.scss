@@ -6,8 +6,8 @@
     content: "\2022";
     color: $jumbo;
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    width: 16px;
+    margin-left: -16px;
   }
 
   a {
@@ -34,7 +34,7 @@
         margin-bottom: 0;
 
         li > a {
-          padding: 0 3px;
+          padding: 0 0.188em;
           color: $black;
           text-decoration: none;
         }

@@ -12,12 +12,12 @@
       background-color: $concrete;
 
       a {
-        margin-left: 0.625em;
+        margin-left: 10px;
       }
 
       img {
-        width: 2.250em;
-        height: 2.250em;
+        width: 36px;
+        height: 36px;
       }
 
       .app__name {
@@ -27,7 +27,7 @@
         font-stretch: normal;
         line-height: normal;
         letter-spacing: normal;
-        margin-left: 0.813em;
+        margin-left: 13px;
       }
     }
 
@@ -43,9 +43,9 @@
       }
 
       .profile--image {
-        width: 2.250em;
-        height: 2.250em;
-        border-radius: 3.125em;
+        width: 36px;
+        height: 36px;
+        border-radius: 50px;
       }
 
       .line {
@@ -57,7 +57,7 @@
 
 .navbar__item__image {
   display: block;
-  margin-right: 0.250em;
+  margin-right: 4px;
 }
 
 .item {
@@ -67,7 +67,7 @@
 
   &.active {
     color: $dark;
-    border-bottom: 0.125em solid $dark;
+    border-bottom: 2px solid $dark;
   }
 }
 

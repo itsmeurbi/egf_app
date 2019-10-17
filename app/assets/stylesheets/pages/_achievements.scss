@@ -33,7 +33,7 @@
 .career-path {
   .advisors__container {
     .advisors {
-      border-radius: 0.625em;
+      border-radius: 10px;
       background-color: $concrete;
       width: 175px;
       height: 35px;
@@ -53,7 +53,7 @@
 
     .breadcrumb {
       a {
-        padding: 0 3px;
+        padding: 0 0.188em;
         color: $black;
 
         &.is-active {
@@ -70,7 +70,7 @@
 
 .achievements__container {
   @include widescreen {
-    padding-top: 5%;
+    padding-top: 3.313em;
     background-color: $alabaster;
 
     .title {
@@ -79,7 +79,7 @@
   }
 
   @include tablet {
-    padding-top: 3%;
+    padding-top: 4.781em;
   }
 }
 

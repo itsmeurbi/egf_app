@@ -9,7 +9,7 @@
   margin: 3% auto;
   display: block;
   border: solid 2px $alto;
-  border-radius: 0.625em;
+  border-radius: 10px;
   font-weight: 600;
   color: $alto;
 
@@ -23,7 +23,7 @@
 }
 
 .button__border--reddish {
-  border-radius: 0.625em;
+  border-radius: 10px;
   border: solid 1px $reddish-pink;
 }
 
@@ -58,7 +58,7 @@
 .button--edit {
   position: absolute;
   bottom: 8%;
-  right: 0.625em;
+  right: 10px;
   margin-top: 2%;
 }
 

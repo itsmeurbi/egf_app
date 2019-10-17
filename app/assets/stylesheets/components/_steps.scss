@@ -42,7 +42,7 @@
   flex-basis: 0;
 
   &:not(:first-child) {
-    flex-basis: 1em;
+    flex-basis: 16px;
     flex-grow: 1;
     flex-shrink: 1;
 
@@ -50,7 +50,7 @@
       bottom: 0;
       content: " ";
       display: block;
-      height: 0.1em;
+      height: 1px;
       left: -50%;
       position: absolute;
       top: #{$size-normal};
@@ -69,7 +69,7 @@
 .steps__marker {
   align-items: center;
   background: $white;
-  border: 0.1em solid $reddish-pink;
+  border: 1px solid $reddish-pink;
   border-radius: 50%;
   color: $reddish-pink;
   display: flex;

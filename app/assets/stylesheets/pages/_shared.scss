@@ -9,11 +9,11 @@
 }
 
 .text--small {
-  font-size: 15px;
+  font-size: 0.938em;
 }
 
 .title {
-  font-size: 34px;
+  font-size: 2.125em;
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
@@ -23,7 +23,7 @@
 
 .text {
   font-family: $open-sans;
-  font-size: 1rem;
+  font-size: 1em;
   color: $black;
   font-style: normal;
   font-stretch: normal;
@@ -133,7 +133,7 @@
 }
 
 .title--category {
-  font-size: 34px;
+  font-size: 2.125em;
   font-weight: 800;
 
   @include desktop {
