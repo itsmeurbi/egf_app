@@ -1,5 +1,5 @@
 .levels
-  - track.milestones.each_with_index do |milestone, index|
+  - track.milestones.order(:level).each_with_index do |milestone, index|
     .steps__item.steps__item--completed
       .steps__marker{ class: ('steps__marker--active' if index.eql?(0)) }
         = milestone.level

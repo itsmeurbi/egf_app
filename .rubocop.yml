@@ -30,12 +30,6 @@ Style/FrozenStringLiteralComment:
     to help transition from Ruby 2.3.0 to Ruby 3.0.
   Enabled: false
 
-Style/StringLiterals:
-  Description: >-
-    Prefer single-quoted strings when you don't need string
-    interpolation or special symbols.
-  Enabled: false
-
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false

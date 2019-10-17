@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-"use strict";
+'use strict';
 
 window.Egf = window.Egf || {};
 Egf.Wizard = function() {};
@@ -10,7 +10,7 @@ Egf.Wizard.prototype = {
   },
 
   enableWizardButton: function() {
-    $(document).on("click", ".button--next, .button--prev", function() {
+    $(document).on('click', '.button--next, .button--prev', function() {
       var stepId = document.querySelector('.wizard__step.step-item.is-active').dataset.stepId;
 
       if (stepId == 2) {

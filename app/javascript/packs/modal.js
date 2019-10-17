@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-"use strict";
+'use strict';
 
 window.Egf = window.Egf || {};
 Egf.Modal = function() {};
@@ -10,11 +10,11 @@ Egf.Modal.prototype = {
   },
 
   closeModal: function() {
-    $(document).on("click", ".delete", function() {
+    $(document).on('click', '.delete', function() {
       $('article.message').hide();
     });
 
-    $(document).on("click", ".key__result--delete", function() {
+    $(document).on('click', '.key__result--delete', function() {
       $(this).closest('.task').remove();
     });
   },

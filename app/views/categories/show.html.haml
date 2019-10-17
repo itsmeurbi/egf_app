@@ -10,7 +10,7 @@
       .tabs.is-centered.is-toggle.is-small
         %ul
           - @category.tracks.each_with_index do |track, index|
-            %li.tabs__element{ class: ("is-active" if index.eql?(0)) }
+            %li.tabs__element{ class: ('is-active' if index.eql?(0)) }
               %a.tabs__element__link
                 = track.name.titleize
 

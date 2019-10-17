@@ -5,7 +5,7 @@ class MilestoneTest < ActiveSupport::TestCase
     @milestone = milestones(:web_client_1)
   end
 
-  test '#milestone' do
+  test '#track' do
     assert_equal 'web client', @milestone.track.name
   end
 end
