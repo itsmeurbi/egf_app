@@ -2,8 +2,7 @@
   .navbar
     .navbar__brand.column
       =link_to(image_tag('michelada_icon.svg'), root_path)
-      .app__name
-        EGF
+      .app__name=t("generic.app_name")
     - if current_user
       .navbar__items.column
         = link_to(category_path("building")) do

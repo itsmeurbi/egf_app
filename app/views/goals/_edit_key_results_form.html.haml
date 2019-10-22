@@ -1,12 +1,12 @@
 .step-content
-  .title Crear key result
+  .title=t("pages.goals.create_key_result")
   .subtitle
     .subtitle__image
       =image_tag 'tasks-icon.svg'
     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Key results
-  .text Te recomendamos tener al menos 2 key results por periodo
+  .text=t("pages.goals.create_key_result_number_recomendation")
   = objective_form.fields_for :key_results do |key_form|
     .container
       .create__task
-        %b Key result
+        %b=t("pages.goals.key_result")
         = key_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')

@@ -1,18 +1,20 @@
 .step-content
-  .title Definir Objetivo
+  .title=t("pages.shared.define_objective")
   .subtitle
     .subtitle__image
       =image_tag 'flag-icon.svg'
-    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon Objetivo principal en este nivel
-  .text Design major new features and demostrates a nuanced understanding of mobile platform constrains
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
+      =t("pages.shared.main_objective_in_level")
+  .text
+    Design major new features and demostrates a nuanced understanding of mobile platform constrains
   .subtitle
     .subtitle__image
       =image_tag 'tasks-icon.svg'
-    .subtitle__text.subtitle__text--medium.subtitle__text__with_icon OKR
+    .subtitle__text.subtitle__text--medium.subtitle__text__with_icont=t("pages.shared.okr")
   .text Objectives and key results are defined by lorem ipsum...
   .container
     .create__task
       .objective__definition
-        %b Definir Objetivo
-        %p 120 caracteres
+        %b=t("pages.shared.define_objective")
+        %p=t("generic.characters_number", number: 120)
       = objective_form.text_area(:description, class: 'textarea textarea--white', size: '10x2')

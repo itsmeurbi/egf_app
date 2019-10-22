@@ -28,19 +28,19 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
 
     if @goal.save
-      flash[:success] = 'Tu meta ha sido creada exitosamente'
+      flash[:success] = t("notices.goals.create.success")
       redirect_to goals_path
     else
-      flash[:error] = @goal.errors.messages.keys.join(', ') + " can't be blank"
+      flash[:error] = t("notices.goals.create.error")
       redirect_to new_goal_path
     end
   end
 
   def update
     if @goal.update(goal_params)
-      flash[:success] = 'Tu meta ha sido actualizada exitosamente'
+      flash[:success] = t("notices.goals.update.success")
     else
-      flash[:error] = @goal.errors.messages.keys.join(', ') + " can't be blank"
+      flash[:error] = t("notices.goals.update.error")
     end
 
     redirect_to goals_path

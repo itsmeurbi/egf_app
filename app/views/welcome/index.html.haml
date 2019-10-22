@@ -3,20 +3,20 @@
     %figure
       .image
         .hero__image--text
-          Descubre tu camino en michelada
+          =t("pages.welcome.discover_michelada_path")
   .content
     .hero--text
       - unless current_user
-        %b Iniciar sesión
-        %p Accede con tu cuenta de michelada.io
+        %b=t("generic.log_in")
+        %p=t("pages.welcome.access_michelada_account")
     .control
       - if current_user
         =link_to(signout_path, method: :delete, class: 'button button--large button__filled--reddish') do
           =image_tag('logo-miche.svg')
-          %span Salir
+          %span=t("generic.log_out")
       - else
         =link_to('/auth/google_oauth2', method: :post, class: 'button button--large button__filled--reddish') do
           =image_tag('logo-miche.svg')
-          %span Iniciar sesión
+          %span=t("generic.log_in")
 .copyright--text
-  ®Todos los derechos reservados michelada.io 2019
+  =t("pages.welcome.rights_reserved")

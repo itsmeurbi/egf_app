@@ -1,33 +1,112 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    categories:
+      building: Building
+      executing: Executing
+      supporting: Supporting
+      strengthening: Strengthening
+    tracks:
+      foundations: Fundations
+      mobile: Mobile
+      server: Server
+      web_client: Web client
+    errors:
+        models:
+          goal:
+            attributes:
+              end_time:
+                blank:  End date can not be blank
+              mentor_id:
+                blank:  Mentor can not be empty
+              milestone_id:
+                blank:  Milestone can not be empty
+              start_time:
+                blank: Start date can not be blank
+              user_id:
+                blank:  User can not be empty
+          objective:
+            attributes:
+              description:
+                 blank: Description can not be blank
+          key_result:
+            attributes:
+              description:
+                blank: Description can not be blank
+    models:
+      category: Categories
+      goal: Goals
+      key_result: Key results
+      milestone: Milestones
+      objective: Objective
+      resource: Resources
+      track: Routes
+      user: Users
+  generic:
+    app_name: EGF
+    add_key_result: Add key result
+    characters_number: "%{number} characters"
+    create: Create
+    date_range: "%{start_date} to %{end_date}"
+    edit: Edit
+    levels: Levels
+    log_in: Log in
+    log_out: Log out
+    mentors: Mentors
+    milestone: Milestones
+    my_goal: My goal
+    key_result: Key results
+    road_number: Road %{number}
+    objective: Objective
+    period: Period
+    to_particle: to
+    util_resources: Util resources
+  notices:
+    goals:
+      create:
+        error: Error creating goal
+        success: Goal created succesfully
+      update:
+        error: Error updating goal
+        success: Goal updated successfully
+    key_results:
+      create:
+        error:  Error creating key result
+        success: Key result created sucessfully
+  pages:
+    achievements:
+      contant_people: If you need an advice about your path, please contact these persons
+      my_performance: My performance
+      your_focus: Your profile focuses on DevOps
+      main_goal: Main goal
+      my_mentees: My mentees
+    goals:
+      actual_key_results: Actual key results
+      create_key_result: Create key result
+      main_goal: The main goal in this level
+      key_result: Key result
+      key_results: Key results
+      key_result_number_recomendation: We recomend you to have at least 2 goals per perios
+      recommended_advisors: "Recommended advisors:"
+    shared:
+      cicle_month_number_recomendation: We recommend you 6 months periods per cicle
+      define_objective: Define objective
+      main_objective_in_level: Main objective in level
+      okr: OKR
+      path: Path
+      period: Period
+      select_category: Select category
+      select_mentor: Select mentor
+      select_milestone: Select milestone
+      select_track: Select track
+      start_goal_path: Start goal path
+    links:
+      add_new_path: Add new path
+      level: level %{level}
+      michelada_achievements: michelada achievements
+      my_achievements: My achievements
+      new_goal_path: Start new goal path
+      see_details: See details
+    welcome:
+      access_michelada_account: Access with your michelada.io account
+      discover_michelada_path: Dicover your michelada path
+      rights_reserved: ®All rights reserved michelada.io 2019

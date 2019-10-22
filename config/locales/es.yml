@@ -1,0 +1,112 @@
+es:
+  activerecord:
+    categories:
+      building: Creación
+      executing: Implementación
+      supporting: Soporte
+      strengthening: Fortalecimiento
+    tracks:
+      foundations: Funcaciones
+      mobile: Móvil
+      server: Servidores
+      web_client: Cliente web
+    errors:
+        models:
+          goal:
+            attributes:
+              end_time:
+                blank:  Debes agregar una fecha final
+              mentor_id:
+                blank:  Debes elegir a un mentor
+              milestone_id:
+                blank:  Debes definir una meta
+              start_time:
+                blank: Debes agregar una fecha inicial
+              user_id:
+                blank:  Debes seleccionar a un usuario
+          objective:
+            attributes:
+              description:
+                 blank: La descripción no puede estar vacía
+          key_result:
+            attributes:
+              description:
+                blank: La descripcioón no puede estar vacía
+    models:
+      category: Categorías
+      goal: Metas
+      key_result: Resultados clave
+      milestone: Hechos
+      objective: Objetivos
+      resource: Recursos
+      track: Rutas
+      user: Usuarios
+  generic:
+    app_name: EGF
+    add_key_result: Agregar resultado clave
+    characters_number: "%{number} carácteres"
+    create: Crear
+    date_range: "%{start_date} a %{end_date}"
+    edit: Editar
+    levels: Niveles
+    log_in: Iniciar sesión
+    log_out: Salir
+    mentors: Mentores
+    milestone: Hecho
+    my_goal: Mi meta
+    key_result: Resultado clave
+    road_number: Trayecto %{number}
+    objective: Objetivo
+    period: Periodo
+    to_particle: a
+    util_resources: Recursos útiles
+  notices:
+    goals:
+      create:
+        error: Error creando la meta
+        success: La meta ha sido creada correctamente
+      update:
+        error: Error actualizando la meta
+        success: La meta ha sido actualizada correctamente
+    key_results:
+      create:
+        error:  Error creando el resultado clave
+        success: El resultado clave ha sido creado correctamente
+  pages:
+    achievements:
+      contant_people: Por favor contacta a las siguientes personas si necesitas algún consejo sobre tu trayectoria
+      my_performance: Mi desempeńo
+      your_focus: Tu perfíl se enfoca mayormente en DevOps
+      main_goal: Meta principal
+      my_mentees: Mis mentores
+    goals:
+      actual_key_results: Resultados claves actuales
+      create_key_result: Crear resultado clave
+      main_goal: La meta principal en este nivel
+      key_result: Resultado clave
+      key_results: Resultados clave
+      key_result_number_recomendation: Te recomendamos tener al menos 2 resultados clave por periodo
+      recommended_advisors: "Asesores recomendados:"
+    shared:
+      cicle_month_number_recomendation: Te recomendamos periodos de 6 meses en cada ciclo
+      define_objective: Definir objetivo
+      main_objective_in_level: Objetivo principal en este nivel
+      okr: OKR
+      path: Trayecto
+      period: Periodo
+      select_category: Selecciona la categoría
+      select_mentor: Selecciona tu mentór
+      select_milestone: Selecciona la meta
+      select_track: Selecciona el recorrido
+      start_goal_path: Comenzar trayecto
+    links:
+      add_new_path: Agregar nuevo trayecto
+      level: nivel %{level}
+      michelada_achievements: Logos de michelada
+      my_achievements: Mis logros
+      new_goal_path: Comenzar un nuevo trayecto
+      see_details: Mostrar detalles
+    welcome:
+      access_michelada_account: Accede con tu cuenta de michelada.io
+      discover_michelada_path: Descubre tu camino en michelada
+      rights_reserved: ®Todos los derechos reservados michelada.io 2019

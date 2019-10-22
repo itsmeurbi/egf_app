@@ -12,13 +12,13 @@
           .wizard__container
             .wizard__step.step-item.is-active
               .wizard__step--circle
-              %span Milestone
+              %span=t("generic.milestone")
             .wizard__step.step-item
               .wizard__step--circle
-              %span Objetivo
+              %span=t("generic.objective")
             .wizard__step.step-item.completed
               .wizard__step--circle
-              %span Key result
+              %span=t("generic.key_result")
           .steps-actions.buttons__container
             = link_to('Previo', root_path, class: 'button button__color--reddish button__border--reddish button--small button--prev steps-action', 'data-nav' => 'previous')
             = link_to('Siguiente', '#', class: 'button button__filled--reddish button--small steps-action button--next', 'data-nav' => 'next')

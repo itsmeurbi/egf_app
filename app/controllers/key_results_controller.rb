@@ -10,10 +10,10 @@ class KeyResultsController < ApplicationController
     @key_result = KeyResult.new(key_result_params)
 
     if @key_result.save
-      flash[:success] = 'Key result ha sido creado exitosamente'
+      flash[:success] = t("notices.key_results.create.success")
       redirect_to goals_path
     else
-      flash[:error] = @key_result.errors.messages.keys.join(', ') + " can't be blank"
+      flash[:error] = t("notices.key_results.create.error")
       redirect_to new_goal_path
     end
   end

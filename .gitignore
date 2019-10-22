@@ -38,3 +38,4 @@ yarn-debug.log*
 # Ignore heroku repository
 
 /floating-earth-08890
+tags

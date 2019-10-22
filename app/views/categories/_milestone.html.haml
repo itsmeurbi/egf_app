@@ -3,7 +3,7 @@
     .subtitle__image
       = image_tag 'flag-icon.svg'
     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-      Meta principal
+      =t("pages.achievements.main_goal")
   .text
     = milestone.description
 
@@ -31,7 +31,7 @@
     .subtitle__image
       = image_tag 'resources-icon.svg'
     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-      Recursos útiles
+      =t("generic.util_resources")
   %ul.resources__list
     %li.resources__element.reddish= "link-1-resource.com"
     %li.resources__element.reddish= "link-2-ruby-resource.com"
@@ -44,6 +44,6 @@
     .subtitle__image
       = image_tag 'advisors-icon.svg'
     .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-      Mentores
+      =t("generic.mentors")
   .text
-    Porfavor contacta a las siguientes personas si necesitas algún consejo en tu trayectoria
+    =t("pages.achievements.contact_people")

@@ -9,7 +9,7 @@
     .steps__container.desktop
       .subtitle.subtitle--levels
         .subtitle__text.subtitle__text--medium
-          Niveles
+          =t("generic.levels")
       = render partial: 'levels', locals: { track: track }
       %div
         - track.milestones.each do |milestone|
@@ -19,7 +19,7 @@
 
   .subtitle.mobile
     .subtitle__text.subtitle__text--medium
-      Niveles
+      =t("generic.levels")
 
   .steps__container
     = render partial: 'levels', locals: { track: track }
@@ -29,6 +29,5 @@
         = render partial: 'milestone', locals: { milestone: milestone }
 
   = render partial: 'mentors'
-  = link_to('Comenzar un nuevo trayecto',
-              new_goal_path,
+  = link_to(t("pages.links.new_goal_path"), new_goal_path,
               class: 'button button__filled--reddish button--large button--category')

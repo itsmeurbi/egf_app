@@ -1,14 +1,15 @@
 .title Trayectoria profesional
 .paths__container
   .path__container.background--reddish.my-path
-    =link_to('Mis logros', '#', class: 'text--white')
+    =link_to(t("pages.links.my_achievements"), '#', class: 'text--white')
   .path__container.button__border--reddish.michelada-path
-    =link_to("Logros de michelada", '#', class: 'reddish')
+    =link_to(t("pages.links.michelada_achievements"), '#', class: 'reddish')
 .graph__image
 =image_tag('chart-personal@3x.jpg')
 .subtitle__text.subtitle__text--medium
-  %b Mi desempeño
-.text.performance--review Tu perfil se enfoca mayormente en DevOps
+  %b=t("pages.achievements.my_performance")
+.text.performance--review
+  =t("pages.achievements.your_focus")
 .linear__separator
 .container.career-path
   .advisors__container
@@ -16,7 +17,7 @@
       .subtitle__image
         =image_tag 'advisors-icon.svg'
       .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-        Mis mentores:
+        =t("pages.achievements.my_mentors")
     .mentors-by-level__container
       - @goals.each do |goal|
         .breadcrumb__path
@@ -27,7 +28,7 @@
               %li
                 =link_to(track_name(goal), '')
               %li
-                =link_to("level #{level(goal)}", '', class: 'is-active')
+                =link_to(t("pages.links.level", level: level(goal)), '', class: 'is-active')
         .advisors
           =image_tag(goal.mentor.image_url)
           %p= goal.mentor.name

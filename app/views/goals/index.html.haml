@@ -1,5 +1,5 @@
 .column.desktop--container
-  .title Mi meta
+  .title=t("generic.my_goal")
   %section.goal__container.accordions
     - @goals.each_with_index do |goal, index|
       %article.accordion
@@ -9,7 +9,7 @@
               .subtitle__image
                 =image_tag 'circle-icon.svg'
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                ="Trayecto #{index + 1}"
+                =t("generic.road_number", number: index + 1)
             .breadcrumb__path
               %nav.breadcrumb
                 %ul
@@ -23,24 +23,24 @@
               .subtitle__image
                 =image_tag 'time-icon.svg'
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                Periodo
+                =t("generic.periods")
             .timeframe
-              %p= "#{goal.start_time.strftime('%m/%d/%Y')} to #{goal.end_time.strftime('%m/%d/%Y')}"
+              %p= t("generic.date_range", start_date: goal.start_time.strftime('%m/%d/%Y'), end_date: goal.end_time.strftime('%m/%d/%Y'))
           %button.toggle
-          = link_to('Editar', edit_goal_path(goal.id), class: 'reddish button--edit')
+          = link_to(t("generic.edit"), edit_goal_path(goal.id), class: 'reddish button--edit')
         .accordion-body
           .accordion-content
             .subtitle
               .subtitle__image
                 =image_tag 'flag-icon.svg'
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                La meta principal en este nivel
+                =t("pages.goals.main_goal")
             .text= goal.milestone.description
             .subtitle
               .subtitle__image
                 =image_tag 'resources-icon.svg'
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                Recursos útiles
+                =t("generic.util_resources")
               %ul.resources__list
                 - goal.resources.each do |resource|
                   %li.reddish
@@ -49,13 +49,13 @@
               .subtitle__image
                 =image_tag 'tasks-icon.svg'
               .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                Objetivo
+                =t("generic.objective")
             .container.acordion--objectives
               .objective= goal.objective.description
               %section.accordions
                 %article.accordion--objective
                   .accordion-header
-                    %b Key results
+                    %b=t("pages.goals.key_results")
                     %button.toogle
                   .accordion-body
                     .accordion-content
@@ -68,12 +68,12 @@
                   .subtitle__image
                     =image_tag 'advisors-icon.svg'
                   .subtitle__text.subtitle__text--medium.subtitle__text__with_icon
-                    Asesores recomendados:
+                    =t("pages.goals.recommended_advisors")
                 .advisors
                   =image_tag('karen.png')
                   %p Karen Ventura
       .linear__separator
-  = link_to('Agregar nuevo trayecto', new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
+  = link_to(t("pages.links.add_new_path"), new_goal_path, class: 'button button--large button__color--reddish button__border--reddish')
 
 :javascript
   $(document).ready( function() {
